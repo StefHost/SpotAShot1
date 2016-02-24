@@ -839,9 +839,14 @@ public class Spel extends AppCompatActivity {
                 textview_gewonnen.setText(getString(R.string.spel_2));
             }
 
-            SQLiteDatabase SQLiteDatabase = this.openOrCreateDatabase("Database", Context.MODE_PRIVATE, null);
-            SQLiteDatabase.execSQL("delete from laatste_spel");
-            SQLiteDatabase.execSQL("INSERT INTO laatste_spel (id, naam_speler, naam_tegenstander, kleur_speler, kleur_tegenstander, score_speler, score_tegenstander, punten, beoordelen_speler, beoordelen_tegenstander, chat, profielfoto) VALUES ('"+id+"', '"+naam_speler+"', '"+naam_tegenstander+"', '"+kleur_speler+"', '"+kleur_tegenstander+"', '"+score_speler+"', '"+score_tegenstander+"', '"+punten+"', '"+beoordelen_speler+"', '"+beoordelen_tegenstander+"', '"+chat+"', '"+profielfoto+"')");
+            //SQLiteDatabase SQLiteDatabase = this.openOrCreateDatabase("Database", Context.MODE_PRIVATE, null);
+            //SQLiteDatabase.execSQL("delete from laatste_spel");
+            //SQLiteDatabase.execSQL("INSERT INTO laatste_spel (id, naam_speler, naam_tegenstander, kleur_speler, kleur_tegenstander, score_speler, score_tegenstander, punten, beoordelen_speler, beoordelen_tegenstander, chat, profielfoto) VALUES ('"+id+"', '"+naam_speler+"', '"+naam_tegenstander+"', '"+kleur_speler+"', '"+kleur_tegenstander+"', '"+score_speler+"', '"+score_tegenstander+"', '"+punten+"', '"+beoordelen_speler+"', '"+beoordelen_tegenstander+"', '"+chat+"', '"+profielfoto+"')");
+
+            SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("laatste_spel", id);
+            editor.apply();
 
             kleuren_kruizen();
         }

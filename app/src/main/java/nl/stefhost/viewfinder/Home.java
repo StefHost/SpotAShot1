@@ -9,10 +9,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -20,11 +22,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.StringTokenizer;
 
 public class Home extends AppCompatActivity {
 
-    public String id;
+    public String resultaat;
+    public String naam;
+    public String laatste_spel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +58,6 @@ public class Home extends AppCompatActivity {
         SQLiteDatabase SQLiteDatabase = this.openOrCreateDatabase("Database", Context.MODE_PRIVATE, null);
         SQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS spellen (id INTEGER PRIMARY KEY, id2 text not null, tegenstander text not null, punten text not null, kleur_speler text not null, kleur_tegenstander text not null, score_speler text not null, score_tegenstander text not null, beoordelen_speler text not null, beoordelen_tegenstander text not null, chat text not null, profielfoto text not null, thema text not null, status text, datum text)");
         SQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS chat (id INTEGER PRIMARY KEY, nummer text, afzender text, datum text, bericht text)");
-        SQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS laatste_spel (id text, naam_speler text, naam_tegenstander text, kleur_speler text, kleur_tegenstander text, score_speler text, score_tegenstander text, punten text, beoordelen_speler text, beoordelen_tegenstander text, chat text, profielfoto text)");
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/futura.ttf");
         TextView textView1 = (TextView) findViewById(R.id.textView2);
@@ -58,32 +69,20 @@ public class Home extends AppCompatActivity {
         textView3.setTypeface(typeface);
         textView4.setTypeface(typeface);
 
-        //autostart spel
-        /*Intent intent = new Intent(this, Spel.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("id", "4");
-        intent.putExtras(bundle);
-        startActivity(intent);*/
     }
 
     protected void onResume() {
         super.onResume();
         SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
-        String naam = sharedPreferences.getString("naam", "");
+        naam = sharedPreferences.getString("naam", "");
         if (naam.equals("")){
             finish();
         }
 
         //laatste spel weergeven
-        SQLiteDatabase SQLiteDatabase = this.openOrCreateDatabase("Database", Context.MODE_PRIVATE, null);
-        Cursor cursor = SQLiteDatabase.rawQuery("SELECT Count(*) FROM laatste_spel", null);
-        int aantal = 0;
-        if (cursor.moveToFirst()){
-            aantal = cursor.getInt(0);
-        }
-        cursor.close();
+        laatste_spel = sharedPreferences.getString("laatste_spel", "");
 
-        if (aantal > 0){
+        if (!laatste_spel.equals("")){
 
             ImageView imageViewOverlay = (ImageView) findViewById(R.id.imageViewOverlay);
             LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
@@ -92,75 +91,81 @@ public class Home extends AppCompatActivity {
             linearLayout1.setVisibility(View.VISIBLE);
             textView.setVisibility(View.VISIBLE);
 
-            laatste_spel();
+            new laatste_spel().execute();
         }
     }
 
-    public void nieuw_spel(View view){
-        TextView textView = (TextView) findViewById(R.id.textView2);
-        Intent intent = new Intent(Home.this, Nieuw_spel.class);
-        if (Build.VERSION.SDK_INT > 21){
-            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(Home.this, textView, "newGame");
-            startActivity(intent, activityOptions.toBundle());
-        }else{
-            startActivity(intent);
+    private class laatste_spel extends AsyncTask<Void, Void, String> {
+        @Override
+        protected String doInBackground(Void... params)  {
+
+            URL url = null;
+            URLConnection urlConnection = null;
+            InputStream inputStream = null;
+
+            try {
+                url = new URL(getString(R.string.website_paginas)+"/laatste_spel.php?nummer="+laatste_spel+"&naam="+naam);
+            } catch (MalformedURLException e) {
+                System.out.println("MalformedURLException");
+            }
+
+            if (url != null){
+                try{
+                    urlConnection = url.openConnection();
+                }catch (java.io.IOException e){
+                    System.out.println("java.io.IOException");
+                }
+            }
+
+            if (urlConnection != null){
+                try{
+                    inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                }catch (java.io.IOException e) {
+                    System.out.println("java.io.IOException");
+                }
+            }
+
+            if (inputStream != null){
+                resultaat = inputStream.toString();
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                try{
+                    resultaat = bufferedReader.readLine();
+                }catch (java.io.IOException e) {
+                    System.out.println("java.io.IOException");
+                }
+
+            }else{
+                resultaat = "ERROR";
+            }
+
+            return null;
         }
+
+        @Override
+        protected void onPostExecute(String result) {
+            laatste_spel_klaar();
+        }
+
     }
 
-    public void spellen(View view){
-        TextView textView = (TextView) findViewById(R.id.textView3);
-        Intent intent = new Intent(Home.this, Spellen.class);
-        if (Build.VERSION.SDK_INT > 21){
-            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(Home.this, textView, "myGames");
-            startActivity(intent, activityOptions.toBundle());
-        }else{
-            startActivity(intent);
-        }
-    }
 
-    public void profiel(View view){
-        TextView textView = (TextView) findViewById(R.id.textView4);
-        Intent intent = new Intent(Home.this, Profiel.class);
-        if (Build.VERSION.SDK_INT > 21){
-            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(Home.this, textView, "myProfile");
-            startActivity(intent, activityOptions.toBundle());
-        }else{
-            startActivity(intent);
-        }
-    }
+    public void laatste_spel_klaar(){
 
-    public void help(View view){
-        TextView textView = (TextView) findViewById(R.id.textView5);
-        Intent intent = new Intent(Home.this, Help.class);
-        if (Build.VERSION.SDK_INT > 21){
-            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(Home.this, textView, "Help");
-            startActivity(intent, activityOptions.toBundle());
-        }else{
-            startActivity(intent);
-        }
-    }
+        StringTokenizer tokens = new StringTokenizer(resultaat, "|");
 
-
-    public void laatste_spel(){
-
-        SQLiteDatabase SQLiteDatabase = this.openOrCreateDatabase("Database", Context.MODE_PRIVATE, null);
-        Cursor cursor = SQLiteDatabase.rawQuery("SELECT id, naam_speler, naam_tegenstander, kleur_speler, kleur_tegenstander, score_speler, score_tegenstander, punten, beoordelen_speler, beoordelen_tegenstander, chat, profielfoto FROM laatste_spel", null);
-        cursor.moveToFirst();
-
-        id = cursor.getString(cursor.getColumnIndex("id"));
-        String kleur_speler = cursor.getString(cursor.getColumnIndex("kleur_speler"));
-        String kleur_tegenstander = cursor.getString(cursor.getColumnIndex("kleur_tegenstander"));
-        String score_speler = cursor.getString(cursor.getColumnIndex("score_speler"));
-        String score_tegenstander = cursor.getString(cursor.getColumnIndex("score_tegenstander"));
-        String punten = cursor.getString(cursor.getColumnIndex("punten"));
-        String beoordelen_speler = cursor.getString(cursor.getColumnIndex("beoordelen_speler"));
-        String beoordelen_tegenstander = cursor.getString(cursor.getColumnIndex("beoordelen_tegenstander"));
-        String naam_speler = cursor.getString(cursor.getColumnIndex("naam_speler"));
-        String naam_tegenstander = cursor.getString(cursor.getColumnIndex("naam_tegenstander"));
-        String chat = cursor.getString(cursor.getColumnIndex("chat"));
-        String profielfoto = cursor.getString(cursor.getColumnIndex("profielfoto"));
-
-        cursor.close();
+        String naam_tegenstander = tokens.nextToken();
+        String punten = tokens.nextToken();
+        String kleur_speler = tokens.nextToken();
+        String kleur_tegenstander = tokens.nextToken();
+        String score_speler = tokens.nextToken();
+        String score_tegenstander = tokens.nextToken();
+        String beoordelen_speler = tokens.nextToken();
+        String beoordelen_tegenstander = tokens.nextToken();
+        String chat = tokens.nextToken();
+        String profielfoto = tokens.nextToken();
 
         final ImageView imageView_foto_tegenstander = (ImageView) findViewById(R.id.foto_tegenstander);
         ImageView imageView_punten_speler_1 = (ImageView) findViewById(R.id.punten_speler_1);
@@ -295,7 +300,7 @@ public class Home extends AppCompatActivity {
             imageView_beoordelen_tegenstander.setVisibility(View.INVISIBLE);
         }
 
-        textView_naam_speler.setText(naam_speler);
+        textView_naam_speler.setText(naam);
         textView_naam_tegenstander.setText(naam_tegenstander);
         textView_chat.setText(chat);
 
@@ -319,9 +324,53 @@ public class Home extends AppCompatActivity {
     public void start_spel(View view){
         Intent intent = new Intent(this, Spel.class);
         Bundle bundle = new Bundle();
-        bundle.putString("id", id);
+        bundle.putString("id", laatste_spel);
         intent.putExtras(bundle);
         startActivity(intent);
+    }
+
+    public void nieuw_spel(View view){
+        TextView textView = (TextView) findViewById(R.id.textView2);
+        Intent intent = new Intent(Home.this, Nieuw_spel.class);
+        if (Build.VERSION.SDK_INT > 21){
+            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(Home.this, textView, "newGame");
+            startActivity(intent, activityOptions.toBundle());
+        }else{
+            startActivity(intent);
+        }
+    }
+
+    public void spellen(View view){
+        TextView textView = (TextView) findViewById(R.id.textView3);
+        Intent intent = new Intent(Home.this, Spellen.class);
+        if (Build.VERSION.SDK_INT > 21){
+            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(Home.this, textView, "myGames");
+            startActivity(intent, activityOptions.toBundle());
+        }else{
+            startActivity(intent);
+        }
+    }
+
+    public void profiel(View view){
+        TextView textView = (TextView) findViewById(R.id.textView4);
+        Intent intent = new Intent(Home.this, Profiel.class);
+        if (Build.VERSION.SDK_INT > 21){
+            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(Home.this, textView, "myProfile");
+            startActivity(intent, activityOptions.toBundle());
+        }else{
+            startActivity(intent);
+        }
+    }
+
+    public void help(View view){
+        TextView textView = (TextView) findViewById(R.id.textView5);
+        Intent intent = new Intent(Home.this, Help.class);
+        if (Build.VERSION.SDK_INT > 21){
+            ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(Home.this, textView, "Help");
+            startActivity(intent, activityOptions.toBundle());
+        }else{
+            startActivity(intent);
+        }
     }
 
 }
