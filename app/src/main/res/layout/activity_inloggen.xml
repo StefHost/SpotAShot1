@@ -1,0 +1,99 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:background="#464646"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:text="@string/inloggen_1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:contentDescription="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/textView1"
+        android:background="#9c9c9c" />
+
+<LinearLayout
+    android:id="@+id/linearLayout1"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true">
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:padding="10dp"
+        android:inputType="textNoSuggestions"
+        android:textCursorDrawable="@drawable/cursor_oranje"
+        android:background="@drawable/border_grijs"
+        android:maxLength="20"
+        android:hint="@string/inloggen_2" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:padding="10dp"
+        android:inputType="textPassword"
+        android:textCursorDrawable="@drawable/cursor_oranje"
+        android:fontFamily="sans-serif"
+        android:background="@drawable/border_grijs"
+        android:hint="@string/inloggen_3" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="end"
+        android:textSize="20sp"
+        android:textColor="#f26522"
+        android:text="@string/inloggen_4"
+        android:clickable="true"
+        android:onClick="vergeten" />
+
+</LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:contentDescription="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/textView3"
+        android:background="#9c9c9c" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:background="#464646"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:text="@string/inloggen_5"
+        android:clickable="true"
+        android:onClick="inloggen" />
+
+</RelativeLayout>

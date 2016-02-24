@@ -1,0 +1,76 @@
+<resources>
+
+    <string name="app_name">Viewfinder</string>
+
+    <string name="website_url">http://viewfinder.stefhost.nl</string>
+    <string name="website_paginas">http://viewfinder.stefhost.nl/paginas/app%201.10</string>
+
+    <!--
+    <string name="website_url">http://192.168.178.15/Viewfinder</string>
+    <string name="website_paginas">http://192.168.178.15/Viewfinder/paginas/app%201.09</string>
+    -->
+
+    <!-- Welkom -->
+    <string name="beginscherm_1">VIEWFINDER</string>
+    <string name="beginscherm_2">create account</string>
+    <string name="beginscherm_3">login</string>
+
+    <!-- Registreren -->
+    <string name="registreren_1">create account</string>
+    <string name="registreren_2">username</string>
+    <string name="registreren_3">password</string>
+    <string name="registreren_4">repeat password</string>
+    <string name="registreren_5">email</string>
+    <string name="registreren_6">I agree to\u00A0</string>
+    <string name="registreren_7">the terms</string>
+    <string name="registreren_8">confirm</string>
+
+    <!-- Voorwaarden -->
+    <string name="voorwaarden_1">the terms</string>
+    <string name="voorwaarden_2">This is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\n</string>
+
+    <!-- Inloggen -->
+    <string name="inloggen_1">login</string>
+    <string name="inloggen_2">username</string>
+    <string name="inloggen_3">password</string>
+    <string name="inloggen_4">forgot password</string>
+    <string name="inloggen_5">confirm</string>
+
+    <!-- Home -->
+    <string name="home_1">new game</string>
+    <string name="home_2">my games</string>
+    <string name="home_3">my profile</string>
+    <string name="home_4">help</string>
+    <string name="menu_home_1">Clear Database</string>
+    <string name="menu_home_2">Speel als Test1</string>
+    <string name="menu_home_3">Speel als Test2</string>
+
+    <!-- Nieuw spel -->
+    <string name="nieuw_spel_1">new game</string>
+    <string name="nieuw_spel_2">points for win</string>
+    <string name="nieuw_spel_3">photocheck</string>
+    <string name="nieuw_spel_4">yes</string>
+    <string name="nieuw_spel_5">no</string>
+    <string name="nieuw_spel_6">choose opponent</string>
+
+    <!-- Spel -->
+    <string name="spel_1">Je hebt het spel gewonnen!</string>
+    <string name="spel_2">Je hebt het spel verloren!</string>
+
+    <!-- Profiel -->
+    <string name="profiel_1">my profile</string>
+    <string name="profiel_2">change photo / username</string>
+    <string name="profiel_3">change email address</string>
+    <string name="profiel_4">change password</string>
+    <string name="profiel_5">repeat password</string>
+    <string name="profiel_6">logout</string>
+    <string name="profiel_7">save profile</string>
+
+    <!-- Help -->
+    <string name="help_1">help</string>
+    <string name="help_2">●○○</string>
+
+    <!-- Chat -->
+    <string name="chat_1">Typ je bericht..</string>
+
+</resources>

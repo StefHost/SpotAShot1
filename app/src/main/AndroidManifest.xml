@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nl.stefhost.viewfinder" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="nl.stefhost.viewfinder.permission.C2D_MESSAGE" />
+    <permission android:name="nl.stefhost.viewfinder.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_22_11"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+
+        <receiver
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="nl.stefhost.viewfinder" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".GcmIntentService" />
+
+        <activity
+            android:name=".Welkom"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Registreren"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Voorwaarden"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Inloggen"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Home"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Nieuw_spel"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Spellen"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Spel"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Foto_maken"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Foto_bekijken"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Foto_beoordelen"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Profiel"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Help"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Chat"
+            android:screenOrientation="portrait">
+        </activity>
+
+    </application>
+
+</manifest>

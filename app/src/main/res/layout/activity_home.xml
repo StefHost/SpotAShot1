@@ -1,0 +1,383 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:contentDescription="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="@string/beginscherm_1" />
+
+    <ImageView
+        android:id="@+id/imageViewOverlay"
+        android:contentDescription="@+id/imageViewOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="20dp"
+        android:background="#f0000000"
+        android:visibility="gone"/>
+
+    <LinearLayout android:id="@+id/linearLayout1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/border_grijs_zwart"
+        android:clickable="true"
+        android:onClick="start_spel"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/foto_tegenstander"
+            android:contentDescription="@+id/foto_tegenstander"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="1dp" />
+
+        <LinearLayout android:id="@+id/linearLayout2"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-2dp"
+            android:layout_marginStart="-2dp"
+            android:background="@drawable/border_grijs">
+
+            <LinearLayout android:id="@+id/linearLayoutNamen"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/naam_speler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/naam_tegenstander"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/linearLayoutPunten"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent">
+
+                <LinearLayout android:id="@+id/linearLayoutPuntenSpeler"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/punten_speler_1"
+                        android:contentDescription="@+id/punten_speler_1"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_speler_2"
+                        android:contentDescription="@+id/punten_speler_2"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_speler_3"
+                        android:contentDescription="@+id/punten_speler_3"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_speler_4"
+                        android:contentDescription="@+id/punten_speler_4"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_speler_5"
+                        android:contentDescription="@+id/punten_speler_5"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_speler_6"
+                        android:contentDescription="@+id/punten_speler_6"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+                    <ImageView
+                        android:id="@+id/punten_speler_7"
+                        android:contentDescription="@+id/punten_speler_7"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/linearLayoutPuntenTegenstander"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/punten_tegenstander_1"
+                        android:contentDescription="@+id/punten_tegenstander_1"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_tegenstander_2"
+                        android:contentDescription="@+id/punten_tegenstander_2"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_tegenstander_3"
+                        android:contentDescription="@+id/punten_tegenstander_3"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_tegenstander_4"
+                        android:contentDescription="@+id/punten_tegenstander_4"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_tegenstander_5"
+                        android:contentDescription="@+id/punten_tegenstander_5"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_tegenstander_6"
+                        android:contentDescription="@+id/punten_tegenstander_6"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                    <ImageView
+                        android:id="@+id/punten_tegenstander_7"
+                        android:contentDescription="@+id/punten_tegenstander_7"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/kleur_uit" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/chat"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:gravity="center"
+                android:background="@drawable/chat"
+                android:textSize="20sp"
+                android:textColor="#000000" />
+
+            <LinearLayout android:id="@+id/linearLayoutBeoordelen"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp">
+
+                <ImageView
+                    android:id="@+id/beoordelen_speler"
+                    android:contentDescription="@+id/beoordelen_speler"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/beoordelen_tegenstander"
+                    android:contentDescription="@+id/beoordelen_tegenstander"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout1"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="laatst gespeelde spel"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:contentDescription="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/textView2"
+        android:background="#9c9c9c" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView3"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:background="#197b30"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:text="@string/home_1"
+        android:clickable="true"
+        android:onClick="nieuw_spel" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:contentDescription="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/textView3"
+        android:layout_marginTop="2dp"
+        android:background="#9c9c9c" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView4"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:background="#0000ff"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:text="@string/home_2"
+        android:clickable="true"
+        android:onClick="spellen" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:contentDescription="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/textView4"
+        android:layout_marginTop="2dp"
+        android:background="#9c9c9c" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView5"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:background="#92278f"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:text="@string/home_3"
+        android:clickable="true"
+        android:onClick="profiel" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:contentDescription="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/textView5"
+        android:layout_marginTop="2dp"
+        android:background="#9c9c9c" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:background="#f26522"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:text="@string/home_4"
+        android:clickable="true"
+        android:onClick="help" />
+
+</RelativeLayout>
