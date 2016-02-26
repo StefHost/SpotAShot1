@@ -82,17 +82,24 @@ public class Home extends AppCompatActivity {
         //laatste spel weergeven
         laatste_spel = sharedPreferences.getString("laatste_spel", "");
 
-        if (!laatste_spel.equals("")){
+        ImageView imageViewOverlay = (ImageView) findViewById(R.id.imageViewOverlay);
+        LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
+        TextView textView = (TextView) findViewById(R.id.textView);
 
-            ImageView imageViewOverlay = (ImageView) findViewById(R.id.imageViewOverlay);
-            LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
-            TextView textView = (TextView) findViewById(R.id.textView);
+        if (laatste_spel.equals("")){
+            imageViewOverlay.setVisibility(View.INVISIBLE);
+            linearLayout1.setVisibility(View.INVISIBLE);
+            textView.setVisibility(View.INVISIBLE);
+        }else{
             imageViewOverlay.setVisibility(View.VISIBLE);
             linearLayout1.setVisibility(View.VISIBLE);
             textView.setVisibility(View.VISIBLE);
-
             new laatste_spel().execute();
         }
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("huidig_spel", "");
+        editor.apply();
     }
 
     private class laatste_spel extends AsyncTask<Void, Void, String> {

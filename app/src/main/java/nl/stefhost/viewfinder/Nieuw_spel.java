@@ -197,9 +197,11 @@ public class Nieuw_spel extends AppCompatActivity {
     public void speltype(View view) {
 
         arrayList = new ArrayList<>();
-        arrayList.add("Inside");
-        arrayList.add("Outside");
+        arrayList.add("Binnen");
+        arrayList.add("Buiten");
+        arrayList.add("Natuur");
         arrayList.add("Random");
+        arrayList.add("Stedelijk");
 
         stringArray = arrayList.toArray(new String[arrayList.size()]);
 
@@ -209,15 +211,21 @@ public class Nieuw_spel extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String gekozen = stringArray[which];
                         TextView textView = (TextView) findViewById(R.id.textView3);
-                        if (gekozen.equals("Inside")) {
+                        if (gekozen.equals("Binnen")) {
                             speltype = "binnen";
-                            textView.setText("inside");
-                        }else if(gekozen.equals("Outside")) {
+                            textView.setText("binnen");
+                        }else if(gekozen.equals("Buiten")) {
                             speltype = "buiten";
-                            textView.setText("outside");
-                        }else{
+                            textView.setText("buiten");
+                        }else if(gekozen.equals("Natuur")) {
+                            speltype = "natuur";
+                            textView.setText("natuur");
+                        }else if(gekozen.equals("Random")) {
                             speltype = "random";
                             textView.setText("random");
+                        }else{
+                            speltype = "stedelijk";
+                            textView.setText("stedelijk");
                         }
                     }
                 });
@@ -245,28 +253,12 @@ public class Nieuw_spel extends AppCompatActivity {
             builder.setTitle("Friends")
                     .setItems(stringArray, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            String gekozen = stringArray[which];
-                            TextView textView = (TextView) findViewById(R.id.textView4);
-                            textView.setText(gekozen);
-                            tegenstander = gekozen;
+                            tegenstander = stringArray[which];
 
-                            //new laad_plaatje((ImageView) findViewById(R.id.imageView8)).execute("http://viewfinder.stefhost.nl/uploads/profielfotos/"+gekozen+".jpg");
+                            vriend = true;
+                            ProgressDialog = android.app.ProgressDialog.show(context, "Searching for opponent", "One moment please..", true, false);
+                            new tegenstander_zoeken().execute();
 
-                            final ImageView imageView = (ImageView) findViewById(R.id.imageView7);
-                            File opslag = Environment.getExternalStorageDirectory();
-                            File profielfoto = new File(opslag,"/Viewfinder/profielfotos/"+gekozen+".jpg");
-                            if(profielfoto.exists()){
-                                final Bitmap myBitmap = BitmapFactory.decodeFile(profielfoto.getAbsolutePath());
-                                imageView.post(new Runnable() {
-                                    public void run() {
-                                        imageView.setImageBitmap(myBitmap);
-                                    }
-                                });
-                            }
-
-                            TextView textView2 = (TextView) findViewById(R.id.textview_onder);
-                            textView2.setTextColor(Color.parseColor("#ffffff"));
-                            start = true;
                         }
                     });
             builder.show();
@@ -401,12 +393,24 @@ public class Nieuw_spel extends AppCompatActivity {
             TextView textView2 = (TextView) findViewById(R.id.textview_onder);
             textView2.setTextColor(Color.parseColor("#ffffff"));
 
-            ImageView imageView2 = (ImageView) findViewById(R.id.imageView8);
-            imageView2.setImageResource(R.drawable.plusje);
+            if (!vriend) {
+                ImageView imageView2 = (ImageView) findViewById(R.id.imageView8);
+                imageView2.setImageResource(R.drawable.plusje);
+                vriend = true;
+            }else{
+                vriend = false;
+            }
 
             start = true;
-            vriend = true;
         }
+
+    }
+
+    public void random_speler(View view){
+
+        tegenstander = "RANDOM";
+        ProgressDialog = android.app.ProgressDialog.show(this, "Searching for random opponent", "One moment please..", true, false);
+        new tegenstander_zoeken().execute();
 
     }
 

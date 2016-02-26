@@ -17,6 +17,9 @@ import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -45,6 +48,7 @@ public class Spellen extends AppCompatActivity {
     public String id;
     public String naam;
     public String resultaat;
+    public String tegenstander;
     public ArrayList<String> arrayList_html;
 
     public ArrayList<String> arrayList_id;
@@ -105,6 +109,11 @@ public class Spellen extends AppCompatActivity {
                 }
             }, 400);
         }
+
+        SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("huidig_spel", "");
+        editor.apply();
     }
 
     String versie;
@@ -223,7 +232,6 @@ public class Spellen extends AppCompatActivity {
                     if (!id_database.equals(id)){
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
                         String datum = sdf.format(new Date());
-                        Log.d("Viewfinder", "Datum:"+datum);
                         SQLiteDatabase.execSQL("INSERT INTO spellen (id2, tegenstander, punten, kleur_speler, kleur_tegenstander, score_speler, score_tegenstander, beoordelen_speler, beoordelen_tegenstander, chat, profielfoto, thema, status, datum) VALUES ('"+id+"','"+tegenstander+"','"+punten+"','"+kleur_speler+"','"+kleur_tegenstander+"','"+score_speler+"','"+score_tegenstander+"','"+beoordelen_speler+"','"+beoordelen_tegenstander+"','"+chat+"','"+profielfoto+"','"+thema+"','"+status+"','"+datum+"')");
                     }else{
                         SQLiteDatabase.execSQL("UPDATE spellen SET tegenstander='"+tegenstander+"', kleur_speler='"+kleur_speler+"', kleur_tegenstander='"+kleur_tegenstander+"', score_speler='"+score_speler+"', score_tegenstander='"+score_tegenstander+"', beoordelen_speler='"+beoordelen_speler+"', beoordelen_tegenstander='"+beoordelen_tegenstander+"', chat='"+chat+"', profielfoto='"+profielfoto+"', status='"+status+"' WHERE id2='"+id+"' ");
@@ -297,11 +305,13 @@ public class Spellen extends AppCompatActivity {
 
         ArrayAdapter arrayAdapter = new arrayAdapter(this, arrayList_naam_speler, arrayList_naam_tegenstander, arrayList_punten, arrayList_kleur_speler, arrayList_kleur_tegenstander, arrayList_score_speler, arrayList_score_tegenstander, arrayList_beoordelen_speler, arrayList_beoordelen_tegenstander, arrayList_chat, arrayList_profielfoto, arrayList_thema, arrayList_status);
         final ListView listView = (ListView) findViewById(R.id.listView);
+        registerForContextMenu(listView);
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+
                 positie = position;
                 String kleur_speler = arrayList_kleur_speler.get(position);
                 String kleur_tegenstander = arrayList_kleur_tegenstander.get(position);
@@ -358,20 +368,16 @@ public class Spellen extends AppCompatActivity {
                     builder.show();
 
                 }else if (!kleur_tegenstander.equals("0")) {
-                    //if (!arrayList_status.get(position).equals("VERWIJDERD")){
                         start(positie);
-                    //}
                 }
             }
         });
 
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        //listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
-            public boolean onItemLongClick(AdapterView<?> arg0, View v, final int pos, long arg3) {
+            //public boolean onItemLongClick(AdapterView<?> arg0, View view, final int pos, long arg3) {
 
-                Log.d("Viewfinder", ""+arrayList_status.get(pos));
-
-                if (arrayList_punten.get(pos).equals(arrayList_score_speler.get(pos)) || arrayList_punten.get(pos).equals(arrayList_score_tegenstander.get(pos)) || arrayList_status.get(pos).equals("GEANNULEERD") ){
+                /*if (arrayList_punten.get(pos).equals(arrayList_score_speler.get(pos)) || arrayList_punten.get(pos).equals(arrayList_score_tegenstander.get(pos)) || arrayList_status.get(pos).equals("GEANNULEERD") ){
                     AlertDialog.Builder builder = new AlertDialog.Builder(Spellen.this);
                     builder.setTitle("Spel verwijderen")
                             .setMessage("Wil je het spel verwijderen?");
@@ -397,12 +403,91 @@ public class Spellen extends AppCompatActivity {
                     });
                     builder.setNegativeButton("NEE", null);
                     builder.show();
-                }
-                return true;
-            }
-        });
+                }*/
+
+                //return true;
+            //}
+       // });
 
         ProgressDialog.dismiss();
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(contextMenu, view, menuInfo);
+
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+        int position = info.position;
+        Log.d("Viewfinder", "position:" +position);
+
+        if (view.getId() == R.id.listView) {
+            MenuInflater inflater = getMenuInflater();
+
+            if (!arrayList_punten.get(position).equals(arrayList_score_speler.get(position)) || arrayList_punten.get(position).equals(arrayList_score_tegenstander.get(position)) || arrayList_status.get(position).equals("GEANNULEERD") ){
+                inflater.inflate(R.menu.spellen_1, contextMenu);
+            }else{
+                inflater.inflate(R.menu.spellen_2, contextMenu);
+            }
+        }
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        final int position = info.position;
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Spellen.this);
+
+        switch(item.getItemId()) {
+            case R.id.menu_spellen_1:
+
+                builder.setTitle("Spel annuleren")
+                        .setMessage("Wil je het spel annuleren?");
+                builder.setPositiveButton("JA", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        verwijder_id = arrayList_id.get(position);
+                        ProgressDialog = android.app.ProgressDialog.show(context, "Spel annuleren", "One moment please..", true, false);
+                        new spel_verwijderen().execute();
+                    }
+                });
+                builder.setNegativeButton("NEE", null);
+                builder.show();
+
+                return true;
+            case R.id.menu_spellen_2:
+
+                builder.setTitle("Tegenstander blokkeren")
+                        .setMessage("Wil je je tegenstander blokkeren?");
+                builder.setPositiveButton("JA", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        tegenstander = arrayList_naam_tegenstander.get(position);
+                        ProgressDialog = android.app.ProgressDialog.show(context, "Tegenstander blokkeren", "One moment please..", true, false);
+                        new tegenstander_blokkeren().execute();
+                    }
+                });
+                builder.setNegativeButton("NEE", null);
+                builder.show();
+
+                return true;
+            case R.id.menu_spellen_3:
+
+                builder.setTitle("Spel verwijderen")
+                        .setMessage("Wil je het spel verwijderen?");
+                builder.setPositiveButton("JA", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        verwijder_id = arrayList_id.get(position);
+                        ProgressDialog = android.app.ProgressDialog.show(context, "Spel verwijderen", "One moment please..", true, false);
+                        new spel_verwijderen().execute();
+                    }
+                });
+                builder.setNegativeButton("NEE", null);
+                builder.show();
+
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
     }
 
     private class kleur_kiezen extends AsyncTask<Void, Void, String> {
@@ -477,6 +562,15 @@ public class Spellen extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params)  {
 
+            SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+            String laatste_spel = sharedPreferences.getString("laatste_spel", "");
+
+            if (laatste_spel.equals(verwijder_id)){
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("laatste_spel", "");
+                editor.apply();
+            }
+
             URL url = null;
             URLConnection urlConnection = null;
             InputStream inputStream = null;
@@ -542,6 +636,76 @@ public class Spellen extends AppCompatActivity {
         }
 
     }
+
+    private class tegenstander_blokkeren extends AsyncTask<Void, Void, String> {
+        @Override
+        protected String doInBackground(Void... params)  {
+
+            URL url = null;
+            URLConnection urlConnection = null;
+            InputStream inputStream = null;
+
+            try {
+                url = new URL(getString(R.string.website_paginas)+"/tegenstander_blokkeren.php?naam="+naam+"&tegenstander="+tegenstander);
+            } catch (MalformedURLException e) {
+                System.out.println("MalformedURLException");
+            }
+
+            if (url != null){
+                try{
+                    urlConnection = url.openConnection();
+                }catch (java.io.IOException e){
+                    System.out.println("java.io.IOException");
+                }
+            }
+
+            if (urlConnection != null){
+                try{
+                    inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                }catch (java.io.IOException e) {
+                    System.out.println("java.io.IOException");
+                }
+            }
+
+            if (inputStream != null){
+                resultaat = inputStream.toString();
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                try{
+                    resultaat = bufferedReader.readLine();
+                }catch (java.io.IOException e) {
+                    System.out.println("java.io.IOException");
+                }
+
+            }else{
+                resultaat = "ERROR";
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            ProgressDialog.dismiss();
+            tegenstander_blokkeren_klaar();
+        }
+
+        public void tegenstander_blokkeren_klaar(){
+
+            if (resultaat.matches("ERROR")) {
+                _functions.melding("SERVER ERROR", "Probeer het later nog een keer.", context);
+            }else{
+                Toast toast = Toast.makeText(context, "Tegenstander is geblokkeerd!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+
+        }
+
+    }
+
+
 
     public void start(int positie){
         String id = arrayList_id.get(positie);

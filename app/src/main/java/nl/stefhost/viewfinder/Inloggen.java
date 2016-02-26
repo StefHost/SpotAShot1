@@ -66,7 +66,6 @@ public class Inloggen extends AppCompatActivity {
 
         TelephonyManager telephonyManager = (TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
         String id = telephonyManager.getDeviceId();
-        Log.d("Viewfinder", "id: "+id);
 
         if (id.equals("357139054066548") || id.equals("000000000000000")){
             EditText editText1 = (EditText) findViewById(R.id.editText1);

@@ -336,7 +336,7 @@
                 android:inputType="textNoSuggestions"
                 android:textCursorDrawable="@drawable/cursor_groen"
                 android:background="@drawable/border_grijs"
-                android:maxLength="20"
+                android:maxLength="256"
                 android:hint="username or email" />
 
             <ImageView
@@ -354,6 +354,19 @@
                 android:onClick="zoeken" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="random player"
+            android:onClick="random_speler" />
 
     </LinearLayout>
 

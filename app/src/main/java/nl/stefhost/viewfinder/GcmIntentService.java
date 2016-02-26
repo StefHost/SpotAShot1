@@ -38,9 +38,9 @@ public class GcmIntentService extends IntentService {
 			}else if(GoogleCloudMessaging.MESSAGE_TYPE_DELETED.equals(messageType)) {
 				Log.d("Viewfinder", "MESSAGE_TYPE_DELETED");
             }else if(GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
-				Log.d("Viewfinder", "Notificatie ontvangen");
-				Log.d("Viewfinder", extras.getString("message"));
                 sendNotification(extras.getString("message"));
+				Log.d("Viewfinder", "Notificatie: "+extras.getString("message"));
+
             }
         }
         GcmBroadcastReceiver.completeWakefulIntent(intent);

@@ -240,6 +240,10 @@ public class Spel extends AppCompatActivity {
         SQLiteDatabase SQLiteDatabase = this.openOrCreateDatabase("Database", Context.MODE_PRIVATE, null);
         SQLiteDatabase.execSQL("UPDATE spellen SET datum='"+datum+"' WHERE id2='"+id+"' ");
 
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("huidig_spel", id);
+        editor.apply();
+
         imageview_foto_tegenstander = (ImageView) findViewById(R.id.foto_tegenstander);
 
         imageview_punten_speler_1 = (ImageView) findViewById(R.id.punten_speler_1);
@@ -372,12 +376,14 @@ public class Spel extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params)  {
 
+            String taal = Locale.getDefault().getLanguage();
+
             URL url = null;
             URLConnection urlConnection = null;
             InputStream inputStream = null;
 
             try {
-                url = new URL(getString(R.string.website_paginas)+"/spel_laden.php?nummer="+id+"&naam="+naam_speler);
+                url = new URL(getString(R.string.website_paginas)+"/spel_laden.php?nummer="+id+"&naam="+naam_speler+"&taal="+taal);
             } catch (MalformedURLException e) {
                 System.out.println("MalformedURLException");
             }
@@ -839,10 +845,6 @@ public class Spel extends AppCompatActivity {
                 textview_gewonnen.setText(getString(R.string.spel_2));
             }
 
-            //SQLiteDatabase SQLiteDatabase = this.openOrCreateDatabase("Database", Context.MODE_PRIVATE, null);
-            //SQLiteDatabase.execSQL("delete from laatste_spel");
-            //SQLiteDatabase.execSQL("INSERT INTO laatste_spel (id, naam_speler, naam_tegenstander, kleur_speler, kleur_tegenstander, score_speler, score_tegenstander, punten, beoordelen_speler, beoordelen_tegenstander, chat, profielfoto) VALUES ('"+id+"', '"+naam_speler+"', '"+naam_tegenstander+"', '"+kleur_speler+"', '"+kleur_tegenstander+"', '"+score_speler+"', '"+score_tegenstander+"', '"+punten+"', '"+beoordelen_speler+"', '"+beoordelen_tegenstander+"', '"+chat+"', '"+profielfoto+"')");
-
             SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("laatste_spel", id);
@@ -923,23 +925,23 @@ public class Spel extends AppCompatActivity {
         imageView.clearAnimation();
         imageView.setVisibility(View.INVISIBLE);
 
-        Log.d("Viewfinder", animatie);
-
         if (animatie.equals("N")){
             handler1 = new Handler();
             handler1.post(animatie_fadein);
         }else{
             RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
             relativeLayout.setVisibility(View.VISIBLE);
+            handler1 = new Handler();
+            handler1.post(start_animaties);
         }
 
-        /*if (animatie.equals("0")){
+        if (animatie.equals(" ")){
             handler2 = new Handler();
             handler2.postDelayed(herlaad_spel, 0);
         }else{
             handler2 = new Handler();
             handler2.postDelayed(herlaad_spel, 3000);
-        }*/
+        }
 
     }
 
@@ -1051,7 +1053,9 @@ public class Spel extends AppCompatActivity {
         @Override
         public void run() {
             if (!aantal.equals("1")){
-                ProgressDialog = android.app.ProgressDialog.show(context, "Reloading game", "One moment please..", true, false);
+                Animation animation = AnimationUtils.loadAnimation(context, R.anim.animatie_rotatie);
+                ImageView imageView = (ImageView) findViewById(R.id.laden);
+                imageView.startAnimation(animation);
                 new spel_laden().execute();
             }
         }
