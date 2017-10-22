@@ -1,0 +1,319 @@
+<resources>
+
+    <!-- Website -->
+    <string name="website_url">http://www.spotashot.nl</string>
+    <string name="website_paginas">http://www.spotashot.nl/paginas/app</string>
+
+    <!--<string name="website_url" formatted="false">http://192.168.178.15/Spot%20A%20Shot%202.0</string>
+    <string name="website_paginas" formatted="false">http://192.168.178.15/Spot%20A%20Shot%202.0/paginas/app</string>-->
+
+    <!-- Algemeen -->
+    <string name="ja">JA</string>
+    <string name="nee">NEE</string>
+    <string name="ok">OK</string>
+    <string name="sluiten">Sluiten</string>
+    <string name="kleur_1">Blauw</string>
+    <string name="kleur_2">Groen</string>
+    <string name="kleur_3">Oranje</string>
+    <string name="kleur_4">Paars</string>
+    <string name="kleur_5">Rood</string>
+    <string name="onderwerp_1">Binnen</string>
+    <string name="onderwerp_2">Buiten</string>
+    <string name="onderwerp_3">Natuur</string>
+    <string name="onderwerp_4">Stedelijk</string>
+    <string name="onderwerp_5">Willekeurig</string>
+    <string name="onderwerpen">onderwerpen</string>
+    <string name="een_ogenblik_geduld">Een ogenblik geduld..</string>
+
+    <!-- Tips -->
+    <string name="tip_1">Wil je een spel annuleren of verwijderen?\n\nHoud een spel dan lang ingedrukt en kies voor 1 van de 2 opties.</string>
+    <string name="tip_2">Wil je in 1 oogopslag alle gemaakte foto\'s zien?\n\nSwipe dan van links naar rechts onder de speelvelden.</string><!-- niet in gebruik -->
+    <string name="tip_3">Wil je in of uitzoomen tijdens het maken van een foto?\n\nSwipe dan naar links of rechts in het camerascherm.</string>
+    <string name="tip_5">Staat er een beoordelingsicoon in je spelersbalk? Dan moet je 1 of meerdere foto\'s beoordelen.</string><!-- wordt niet meer gebruikt -->
+    <string name="tip_6">Speel je tegen een internationale tegenstander? Dan kun je gewoon in je eigen taal spelen.</string>
+    <string name="tip_7">Klik op het muntje links bovenin het scherm om nieuwe thema\'s te kopen en je voortgang te bekijken!</string>
+
+    <!-- Popups -->
+    <string name="popup_0">Welkom terug!</string>
+    <string name="popup_1">Je tegenstander is aan de beurt!\n\nJe krijgt een melding wanneer\nde beurt wisselt.</string>
+    <string name="popup_2">Maak 3 op een rij\nen scoor een punt.\n\nGeen diagonalen!\n\nDe speler die als eerste\n2 punten behaalt wint.</string>
+    <string name="popup_3">Een speler heeft 24u om te spelen.\nNa 24u wisselt de beurt.</string>
+    <string name="popup_4">Je hebt nog een handeling over!\n\nIedere beurt heeft 2 handelingen.\nMaak foto\'s of wissel onderwerpen.\n\nNa 2 handelingen wisselt de beurt.</string>
+    <string name="popup_5">Tik op deze knop om de beurt vroegtijdig\nte beëndigen binnen de 24u,\nongeacht het aantal handelingen.</string>
+    <string name="popup_6">Foto\'s van tegenspeler moeten\neerst beoordeeld worden.\n\nTik op een vierkant\nmet dit icoon.</string>
+    <string name="popup_7">Wil je een onderwerp wisselen?\n\nTik op dit icoon.\n\nEen onderwerp wisselen is 1 handeling!</string>
+    <string name="popup_8">Verzamel muntjes en open\nnieuwe thema\'s.\n\nSpeel moeilijke thema\'s en\nverdien een hoger aantal muntjes.</string>
+    <string name="popup_9">Wanneer een 3 op een rij is gemaakt\nzijn de betreffende vierkanten\ngeen onderdeel meer van het spel.\n\nGeen 3 op een rij mogelijk\nvoor beide spelers,\n9 nieuwe onderwerpen!</string>
+    <string name="popup_10">Je hebt nog één handeling over!\n\n</string>
+    <string name="popup_10_check">Deze melding niet meer tonen</string>
+    <string name="popup_11">Een knipperend vierkant is een nieuw onderwerp.</string>
+    <string name="popup_12">Tweede handeling is niet mogelijk.\nBeëindig de beurt vroegtijdig om door te gaan naar 9 nieuwe onderwerpen.</string>
+    <string name="popup_13">Je tegenstander heeft de laatste 2 beurten niet gespeeld.\nJe hebt gewonnen!</string>
+    <string name="popup_14">Je hebt de laatste 2 beurten niet gespeeld.\nJe hebt verloren!</string>
+
+    <!-- Foutmeldingen -->
+    <string name="foutmelding_internet">Geen netwerk verbinding</string>
+    <string name="foutmelding_server_titel">Serverfout</string>
+    <string name="foutmelding_server_tekst">Probeer het later nog een keer.</string>
+
+    <!-- Notificaties -->
+    <string name="notificatie_1_titel">Nieuw spel</string>
+    <string name="notificatie_1_tekst">[naam] heeft een nieuw spel gestart.</string>
+    <string name="notificatie_2_titel">Spel is begonnen</string>
+    <string name="notificatie_2_tekst">Het spel met [naam] is begonnen.</string>
+    <string name="notificatie_3_titel">Nieuwe onderwerpen beschikbaar</string>
+    <string name="notificatie_3_tekst">Tijd om foto\'s te maken.</string>
+
+    <!--<string name="notificatie_4_titel">Tijd om te beoordelen</string>
+    <string name="notificatie_4_tekst">[naam] heeft een foto gemaakt.</string>-->
+    <string name="notificatie_4_titel">Spel met [naam]</string>
+    <string name="notificatie_4_tekst">Jij bent aan de beurt.</string>
+
+    <string name="notificatie_5_titel">Je foto is afgekeurd</string>
+    <string name="notificatie_5_tekst">Probeer het nog een keer.</string>
+    <string name="notificatie_6_titel">Beurt is verlopen</string>
+    <string name="notificatie_6_tekst">Je beurt is verlopen.\nNog [aantal] keer en je hebt verloren.</string>
+    <string name="notificatie_7_titel">Beurt is verlopen</string>
+    <string name="notificatie_7_tekst">De beurt van [naam] is verlopen.\nJij bent aan de beurt.</string>
+    <string name="notificatie_8_titel">Nieuw bericht</string>
+    <string name="notificatie_8_tekst">Je hebt een bericht ontvangen van [naam]</string>
+    <string name="notificatie_9_titel">Spel gaat stoppen</string>
+    <string name="notificatie_9_tekst">Het spel met [naam] gaat stoppen binnen 1 uur!\nSpeel snel verder!</string>
+
+    <!-- Welkom -->
+    <string name="welkom_1">Registreren</string>
+    <string name="welkom_2">Inloggen</string>
+
+    <!-- Registreren -->
+    <string name="registreren_1">Registreren</string>
+    <string name="registreren_2">Naam</string>
+    <string name="registreren_3">Wachtwoord</string>
+    <string name="registreren_4">Wachtwoord herhalen</string>
+    <string name="registreren_5">E-mail</string>
+    <string name="registreren_6">Ik accepteer de\u00A0</string>
+    <string name="registreren_7">voorwaarden</string>
+    <string name="registreren_8">Bevestigen</string>
+    <string name="registreren_foutmelding_1_titel">Geen naam</string>
+    <string name="registreren_foutmelding_1_tekst">Je hebt geen naam opgegeven.\nProbeer het nog een keer.</string>
+    <string name="registreren_foutmelding_2_titel">Geen wachtwoord</string>
+    <string name="registreren_foutmelding_2_tekst">Je hebt geen wachtwoord opgegeven.\nProbeer het nog een keer.</string>
+    <string name="registreren_foutmelding_3_titel">Wachtwoord herhalen</string>
+    <string name="registreren_foutmelding_3_tekst">Je hebt je wachtwoord niet herhaald.\nProbeer het nog een keer.</string>
+    <string name="registreren_foutmelding_4_titel">Verkeerde wachtwoord</string>
+    <string name="registreren_foutmelding_4_tekst">De wachtwoorden komen niet overeen.\nProbeer het nog een keer.</string>
+    <string name="registreren_foutmelding_5_titel">Geen e-mail adres</string>
+    <string name="registreren_foutmelding_5_tekst">Je hebt geen e-mail adres opgegeven.\nProbeer het nog een keer.</string>
+    <string name="registreren_foutmelding_6_titel">Voorwaarden</string>
+    <string name="registreren_foutmelding_6_tekst">Je hebt de voorwaarden niet geaccepteerd.\nProbeer het nog een keer.</string>
+    <string name="registreren_melding_1">Registreren</string>
+    <string name="registreren_foutmelding_7_titel">Naam bestaat al</string>
+    <string name="registreren_foutmelding_7_tekst">Deze naam bestaat al.\nProbeer het nog een keer.</string>
+    <string name="registreren_foutmelding_8_titel">E-mail adres bestaat al</string>
+    <string name="registreren_foutmelding_8_tekst">Dit e-mail adres bestaat al.\nProbeer het nog een keer.</string>
+
+    <!-- Voorwaarden -->
+    <string name="voorwaarden_1">Algemene Voorwaarden</string>
+
+    <!-- Inloggen -->
+    <string name="inloggen_1">Inloggen</string>
+    <string name="inloggen_2">Naam</string>
+    <string name="inloggen_3">Wachtwoord</string>
+    <string name="inloggen_4">Wachtwoord vergeten</string>
+    <string name="inloggen_5">Bevestigen</string>
+    <string name="inloggen_melding_1">Notificaties inschakelen</string>
+    <string name="inloggen_foutmelding_1_titel">Geen naam</string>
+    <string name="inloggen_foutmelding_1_tekst">Je hebt geen naam opgegeven.\nProbeer het nog een keer.</string>
+    <string name="inloggen_foutmelding_2_titel">Geen wachtwoord</string>
+    <string name="inloggen_foutmelding_2_tekst">Je hebt geen wachtwoord opgegeven.\nProbeer het nog een keer.</string>
+    <string name="inloggen_melding_2">Inloggen</string>
+    <string name="inloggen_foutmelding_3_titel">Verkeerde naam</string>
+    <string name="inloggen_foutmelding_3_tekst">Je hebt een verkeerde naam opgegeven.\nProbeer het nog een keer.</string>
+    <string name="inloggen_foutmelding_4_titel">Verkeerd wachtwoord</string>
+    <string name="inloggen_foutmelding_4_tekst">Je hebt een verkeerd wachtwoord opgegeven.\nProbeer het nog een keer.</string>
+    <string name="inloggen_melding_3">Verbinden</string>
+    <string name="inloggen_melding_4_titel">E-mail</string>
+    <string name="inloggen_melding_4_tekst_a">Je hebt een e-mail ontvangen op</string>
+    <string name="inloggen_melding_4_tekst_b">met instructies om je wachtwoord te resetten.</string>
+
+    <!-- Home -->
+    <string name="home_1">Nieuw spel</string>
+    <string name="home_2">Mijn spellen</string>
+    <string name="home_3">Mijn profiel</string>
+    <string name="home_4">Spelregels</string>
+    <string name="home_5">Laatst gespeelde spel</string>
+    <string name="home_6"> </string>
+    <string name="home_7">Thema\'s</string>
+    <string name="home_8">Thema\'s kopen met geld is nog niet mogelijk..</string>
+    <string name="home_9">Wil je dit thema kopen voor</string>
+    <string name="home_10">muntjes?</string>
+
+    <!-- Nieuw spel -->
+    <string name="nieuw_spel_1">Nieuw spel</string>
+    <string name="nieuw_spel_2">Punten om te winnen</string>
+    <string name="nieuw_spel_3">Kies kleur</string>
+    <string name="nieuw_spel_4">Kies thema</string>
+    <string name="nieuw_spel_5">Kies speltype</string>
+    <string name="nieuw_spel_6">Tegenstander</string>
+    <string name="nieuw_spel_7">Naam of e-mail</string>
+    <string name="nieuw_spel_8">Willekeurige tegenstander</string>
+    <string name="nieuw_spel_9">Verstuur uitnodiging</string>
+    <string name="nieuw_spel_10">Alleen uit hetzelfde land</string>
+    <string name="nieuw_spel_opties_1">Punten om te winnen</string>
+    <string name="nieuw_spel_opties_2">Speelkleur</string>
+    <string name="nieuw_spel_opties_3">Thema</string>
+    <string name="nieuw_spel_opties_4">Vrienden</string>
+    <string name="nieuw_spel_opties_5">Speltype</string>
+    <string name="nieuw_spel_speltype_1">Langzaam, om beurten fotograferen</string>
+    <string name="nieuw_spel_speltype_2">Snel, onbeperkt fotograferen</string>
+    <string name="nieuw_spel_speltype_3">Langzaam</string>
+    <string name="nieuw_spel_speltype_4">Snel</string>
+    <string name="nieuw_spel_melding_1">Zoeken naar speler</string>
+    <string name="nieuw_spel_melding_2"> is toegevoegd aan je vriendenlijst!</string>
+    <string name="nieuw_spel_foutmelding_1_titel">Vrienden nodig?</string>
+    <string name="nieuw_spel_foutmelding_1_tekst">Je kunt niet tegen jezelf spelen.\nProbeer het nog een keer.</string>
+    <string name="nieuw_spel_foutmelding_2_titel">Geen naam of e-mail adres</string>
+    <string name="nieuw_spel_foutmelding_2_tekst">Je hebt geen naam of e-mail adres opgegeven.\nProbeer het nog een keer.</string>
+    <string name="nieuw_spel_foutmelding_3_titel">Verkeerde naam</string>
+    <string name="nieuw_spel_foutmelding_3_tekst">Je hebt een verkeerde naam opgegeven.\nProbeer het nog een keer.</string>
+    <string name="nieuw_spel_foutmelding_4_titel">Verkeerd e-mail adres</string>
+    <string name="nieuw_spel_foutmelding_4_tekst">Je hebt een verkeerd e-mail adres opgegeven.\nProbeer het nog een keer.</string>
+    <string name="nieuw_spel_melding_3_titel">Willekeurige tegenstander</string>
+    <string name="nieuw_spel_melding_3_tekst">Weet je zeker dat je tegen een willekeurige tegenstander wilt spelen?</string>
+    <string name="nieuw_spel_melding_4">Zoeken naar een willekeurige tegenstander</string>
+    <string name="nieuw_spel_foutmelding_6_titel">Geen speelkleur</string>
+    <string name="nieuw_spel_foutmelding_6_tekst">Je hebt geen speelkleur gekozen.\nProbeer het nog een keer.</string>
+    <string name="nieuw_spel_foutmelding_7_titel">Geen thema</string>
+    <string name="nieuw_spel_foutmelding_7_tekst">Je hebt geen thema gekozen.\nProbeer het nog een keer.</string>
+    <string name="nieuw_spel_melding_5">Tegenstander uitnodigen</string>
+    <string name="nieuw_spel_melding_6">Spel gemaakt!</string>
+
+    <string name="nieuw_spel_melding_7_titel">Speler uitnodigen</string>
+    <string name="nieuw_spel_melding_7_tekst">Wil je een e-mail sturen naar het gekozen e-mail adres met daarin een uitnodiging voor Spot a Shot?</string>
+    <string name="nieuw_spel_melding_8">E-mail versturen</string>
+    <string name="nieuw_spel_melding_9">Speler is uitgenodigd!</string>
+    <string name="nieuw_spel_foutmelding_9">Je tegenstander heeft dit thema nog niet vrijgespeeld.</string>
+
+    <!-- Spellen -->
+    <string name="spellen_1">Mijn spellen</string>
+    <string name="spellen_2">Kies speelkleur</string>
+    <string name="spellen_3">Wachten op bevestiging</string>
+    <string name="spellen_4">GEWONNEN</string>
+    <string name="spellen_5">VERLOREN</string>
+    <string name="spellen_6">Geannuleerd door tegenstander</string>
+    <string name="spellen_7">Jouw beurt</string>
+    <string name="spellen_8">Beurt tegenstander</string>
+    <string name="spellen_9">Houd een spel langdurig ingedrukt voor opties</string>
+    <string name="spellen_melding_1">Spellen laden</string>
+    <string name="spellen_melding_2">Spel starten</string>
+    <string name="spellen_melding_3_titel">Spel annuleren</string>
+    <string name="spellen_melding_3_tekst">Wil je het spel annuleren?</string>
+    <string name="spellen_melding_4">Spel annuleren</string>
+    <string name="spellen_melding_5_titel">Tegenstander blokkeren</string>
+    <string name="spellen_melding_5_tekst1">Wil je </string>
+    <string name="spellen_melding_5_tekst2"> blokkeren?</string>
+    <string name="spellen_melding_6">Tegenstander blokkeren</string>
+    <string name="spellen_melding_7_titel">Spel verwijderen</string>
+    <string name="spellen_melding_7_tekst">Wil je het spel verwijderen?</string>
+    <string name="spellen_melding_8">Spel verwijderen</string>
+    <string name="spellen_melding_9">Spellen herladen</string>
+    <string name="spellen_melding_10">Tegenstander is geblokkeerd!</string>
+    <string name="spellen_melding_11">Je moet deze toestemming goedkeuren om de profielfoto van je tegenstander te kunnen zien.</string>
+    <string name="spellen_menu_2">toevoegen aan vriendenlijst</string>
+    <string name="spellen_menu_2_1"> </string>
+    <string name="spellen_menu_2_2"> </string>
+    <string name="spellen_menu_3">blokkeren</string>
+    <string name="spellen_menu_5">Rematch</string>
+
+    <!-- Spel -->
+    <string name="spel_melding_1_titel">Te laat</string>
+    <string name="spel_melding_1_tekst">Je tegenstander heeft de foto al gemaakt!</string>
+    <string name="spel_1">GEWONNEN</string>
+    <string name="spel_2">VERLOREN</string>
+    <string name="spel_3">Het spel begint</string>
+    <string name="spel_4">Nieuwe onderwerpen</string>
+    <string name="spel_5">3 op een rij!</string>
+    <string name="spel_6">Geen 3 op een rij mogelijk</string>
+    <string name="spel_7">Alle onderwerpen gespeeld</string>
+    <string name="spel_8">Je hebt gewonnen!</string>
+    <string name="spel_9">Je hebt verloren!</string>
+    <string name="spel_10">&lt;&lt; Swipe hier om alle foto\'s te zien &gt;&gt;</string>
+    <string name="spel_melding_2">Je moet deze toestemming goedkeuren om je camera te gebruiken.</string>
+    <string name="spel_melding_3_titel">Beurt beëindigen</string>
+    <string name="spel_melding_3_tekst">Weet je zeker dat je je beurt vroegtijdig wilt beëindigen?</string>
+
+    <!-- Foto maken -->
+    <string name="foto_maken_melding_1">Deze foto gebruiken?</string>
+    <string name="foto_maken_melding_2">Foto uploaden</string>
+    <string name="foto_maken_melding_3_titel">Onderwerp wisselen</string>
+    <string name="foto_maken_melding_3_tekst">Weet je zeker dat je dit onderwerp wilt wisselen?</string>
+    <string name="foto_maken_melding_4">Onderwerp annuleren</string>
+    <string name="foto_maken_1">Het is niet jouw beurt..</string>
+    <string name="foto_maken_2">Onderwerp\nwisselen</string>
+
+    <!-- Foto beoordelen -->
+    <string name="foto_beoordelen_melding_1_titel">Foto afkeuren</string>
+    <string name="foto_beoordelen_melding_1_tekst">Wil je de foto afkeuren?</string>
+    <string name="foto_beoordelen_melding_2">Foto afkeuren</string>
+    <string name="foto_beoordelen_melding_3">Foto goedkeuren</string>
+
+    <!-- Chat -->
+    <string name="chat_1">Chat</string>
+    <string name="chat_2">Typ je bericht..</string>
+    <string name="chat_melding_1">Chat laden</string>
+    <string name="chat_3">Jij:</string>
+    <string name="chat_melding_2">Bericht verzenden</string>
+
+    <!-- Profiel -->
+    <string name="profiel_1">Mijn profiel</string>
+    <string name="profiel_2">Foto / naam aanpassen</string>
+    <string name="profiel_3">E-mail adres aanpassen</string>
+    <string name="profiel_4">Wachtwoord aanpassen</string>
+    <string name="profiel_5">Wachtwoord herhalen</string>
+    <string name="profiel_6">Profiel opslaan</string>
+    <string name="melding_profiel_1">Foto uploaden</string>
+    <string name="profiel_foutmelding_1_titel">Geen wachtwoord</string>
+    <string name="profiel_foutmelding_1_tekst">Je hebt geen wachtwoord opgegeven.\nProbeer het nog een keer.</string>
+    <string name="profiel_foutmelding_2_titel">Wachtwoord herhalen</string>
+    <string name="profiel_foutmelding_2_tekst">Je hebt je wachtwoord niet herhaald.\nProbeer het nog een keer.</string>
+    <string name="profiel_foutmelding_3_titel">Verkeerde wachtwoord</string>
+    <string name="profiel_foutmelding_3_tekst">De wachtwoorden komen niet overeen.\nProbeer het nog een keer.</string>
+    <string name="melding_profiel_2">Profiel opslaan</string>
+    <string name="profiel_foutmelding_4_titel">Naam bestaat al</string>
+    <string name="profiel_foutmelding_4_tekst">Deze naam bestaat al.\nProbeer het nog een keer.</string>
+    <string name="profiel_foutmelding_5_titel">E-mail adres bestaat al</string>
+    <string name="profiel_foutmelding_5_tekst">Dit e-mail adres bestaat al.\nProbeer het nog een keer.</string>
+    <string name="melding_profiel_3">Profiel opgeslagen!</string>
+    <string name="profiel_melding_1">Je moet deze toestemming goedkeuren om een profielfoto te kiezen.</string>
+
+    <!-- Profiel tegenstander -->
+    <string name="profiel_tegenstander_1">Toevoegen aan vriendenlijst</string>
+    <string name="profiel_tegenstander_2">Blokkeren</string>
+    <string name="profiel_tegenstander_3">Muntjes:</string>
+    <string name="profiel_tegenstander_4">Foto\'s:</string>
+    <string name="profiel_tegenstander_5">Spellen gewonnen:</string>
+    <string name="profiel_tegenstander_6">Spellen verloren:</string>
+
+    <!-- Spelregels -->
+    <string name="spelregels_1">Spelregels</string>
+    <string name="spelregels_2">●○○○○○○○○</string>
+
+    <!-- Instellingen -->
+    <string name="instellingen_1">Notificaties</string>
+    <string name="instellingen_2">Uitnodigingen</string>
+    <string name="instellingen_3">Start van spel</string>
+    <string name="instellingen_4">Nieuwe onderwerpen</string>
+    <string name="instellingen_5">Wisseling speelbeurt</string>
+    <string name="instellingen_6">Chatberichten</string>
+    <string name="instellingen_7">Meldingsgeluid</string>
+    <string name="instellingen_8">Meer opties</string>
+    <string name="instellingen_9">Laatst gespeelde spel op homescherm</string>
+    <string name="instellingen_10">Speler deblokkeren</string>
+    <string name="instellingen_11">Uitloggen</string>
+    <string name="instellingen_12">Account verwijderen</string>
+    <string name="instellingen_melding_1_titel">Speler deblokkeren</string>
+    <string name="instellingen_melding_2_titel">Uitloggen</string>
+    <string name="instellingen_melding_2_tekst">Weet je zeker dat je wilt uitloggen?</string>
+    <string name="instellingen_melding_3_titel">Account verwijderen</string>
+    <string name="instellingen_melding_3_tekst">Weet je zeker dat je je account wilt verwijderen?</string>
+
+</resources>

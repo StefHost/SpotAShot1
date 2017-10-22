@@ -1,0 +1,350 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/themas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ab000000"
+    android:clickable="true"
+    android:onClick="themas_uit"
+    android:visibility="gone"
+    android:gravity="center"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="#545454">
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:drawableLeft="@drawable/munt_klein"
+            android:drawableStart="@drawable/munt_klein"
+            android:drawablePadding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="@string/home_7"
+            android:layout_below="@+id/TextView1"
+            android:layout_alignLeft="@+id/linearLayout1"
+            android:layout_alignStart="@+id/linearLayout1" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TextView2"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/thema1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/leeg"
+                android:drawablePadding="30dp"
+                android:gravity="center_vertical"
+                android:textColor="#ffffff"
+                android:text="@string/onderwerp_1"
+                android:clickable="true"
+                android:onClick="kies_thema"
+                android:tag="1"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/muntjes1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:text="@string/onderwerpen"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/prijs1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="0"
+                android:background="@drawable/ster_grijs"
+                android:padding="2dp"
+                android:text=""
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/thema2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/slotje"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/onderwerp_2"
+                android:textColor="#868386"
+                android:clickable="true"
+                android:onClick="kies_thema"
+                android:tag="2"/>
+
+            <TextView
+                android:id="@+id/muntjes2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:drawableLeft="@drawable/munt_klein"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/munt_klein"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="   500"
+                android:textColor="#868386"
+                android:clickable="true"
+                android:onClick="kopen_muntjes"
+                android:tag="2" />
+
+            <TextView
+                android:id="@+id/prijs2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="0"
+                android:background="#676767"
+                android:padding="2dp"
+                android:text="€ 0,99"
+                android:textSize="12sp"
+                android:clickable="true"
+                android:onClick="kopen_geld"
+                android:tag="2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/thema3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/slotje"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/onderwerp_3"
+                android:textColor="#868386"
+                android:clickable="true"
+                android:onClick="kies_thema"
+                android:tag="3"/>
+
+            <TextView
+                android:id="@+id/muntjes3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:drawableLeft="@drawable/munt_klein"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/munt_klein"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="1500"
+                android:textColor="#868386"
+                android:clickable="true"
+                android:onClick="kopen_muntjes"
+                android:tag="3" />
+
+            <TextView
+                android:id="@+id/prijs3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="#676767"
+                android:padding="2dp"
+                android:textSize="12sp"
+                android:layout_weight="0"
+                android:text="€ 0,99"
+                android:clickable="true"
+                android:onClick="kopen_geld"
+                android:tag="3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/thema4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/slotje"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/onderwerp_4"
+                android:textColor="#868386"
+                android:clickable="true"
+                android:onClick="kies_thema"
+                android:tag="4"/>
+
+            <TextView
+                android:id="@+id/muntjes4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:drawableLeft="@drawable/munt_klein"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/munt_klein"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="1500"
+                android:textColor="#868386"
+                android:clickable="true"
+                android:onClick="kopen_muntjes"
+                android:tag="4" />
+
+            <TextView
+                android:id="@+id/prijs4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="#676767"
+                android:padding="2dp"
+                android:textSize="12sp"
+                android:layout_weight="0"
+                android:text="€ 0,99"
+                android:clickable="true"
+                android:onClick="kopen_geld"
+                android:tag="4" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout4"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/thema5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/slotje"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/onderwerp_5"
+                android:textColor="#868386"
+                android:clickable="true"
+                android:onClick="kies_thema"
+                android:tag="5"/>
+
+            <TextView
+                android:id="@+id/muntjes5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:drawableLeft="@drawable/munt_klein"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/munt_klein"
+                android:gravity="center"
+                android:text="2000"
+                android:textColor="#868386"
+                android:textSize="12sp"
+                android:clickable="true"
+                android:onClick="kopen_muntjes"
+                android:tag="5" />
+
+            <TextView
+                android:id="@+id/prijs5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="#676767"
+                android:padding="2dp"
+                android:textSize="12sp"
+                android:layout_weight="0"
+                android:text="€ 0,99"
+                android:clickable="true"
+                android:onClick="kopen_geld"
+                android:tag="5" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TextView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="0dp"
+            android:textSize="14sp"
+            android:textColor="#868386"
+            android:gravity="center"
+            android:text=" "
+            android:layout_below="@+id/linearLayout5"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <!--android:text="..... (binnenkort meer beschikbaar)"-->
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,176 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profiel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ab000000"
+    android:clickable="true"
+    android:onClick="profiel_uit"
+    android:visibility="gone"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_grijs_zwart"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/profielfoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:padding="1dp"
+            android:background="@drawable/border_grijs_zwart" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_toRightOf="@+id/profielfoto"
+            android:layout_toEndOf="@+id/profielfoto"
+            android:layout_height="150dp"
+            android:layout_marginLeft="-1dp"
+            android:layout_marginTop="-1dp"
+            android:background="@drawable/border_grijs"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/naam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:background="@drawable/border_grijs"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:layout_marginLeft="-1dp"
+                android:layout_marginRight="-1dp"
+                android:paddingBottom="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/streep"
+                android:drawableRight="@drawable/plusje_klein2"
+                android:drawableEnd="@drawable/plusje_klein2"
+                android:drawablePadding="5dp"
+                android:clickable="true"
+                android:onClick="vriend_toevoegen"
+                android:text="@string/profiel_tegenstander_1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:paddingTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/streep"
+                android:drawableRight="@drawable/slotje"
+                android:drawableEnd="@drawable/slotje"
+                android:drawablePadding="5dp"
+                android:clickable="true"
+                android:onClick="blokkeren"
+                android:text="@string/profiel_tegenstander_2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout1"
+            android:background="@drawable/border_grijs_zwart"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:layout_marginTop="-2dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/muntjes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:drawableLeft="@drawable/munt_klein"
+                android:drawableStart="@drawable/munt_klein"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/profiel_tegenstander_3"/>
+
+            <TextView
+                android:id="@+id/fotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:drawableLeft="@drawable/fotos"
+                android:drawableStart="@drawable/fotos"
+                android:drawablePadding="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/profiel_tegenstander_4" />
+
+            <TextView
+                android:id="@+id/gewonnen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#ffffff"
+                android:drawableLeft="@drawable/goed_klein"
+                android:drawableStart="@drawable/goed_klein"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/profiel_tegenstander_5" />
+
+            <TextView
+                android:id="@+id/verloren"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#ffffff"
+                android:drawableLeft="@drawable/fout_klein"
+                android:drawableStart="@drawable/fout_klein"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/profiel_tegenstander_6" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/TextViewThemas1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#ffffff"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="5dp" />
+
+                <TextView
+                    android:id="@+id/TextViewThemas2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="#ffffff"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="5dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
