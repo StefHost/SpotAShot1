@@ -7,22 +7,14 @@
         android:id="@+id/textview_boven"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
+        android:paddingTop="15dp"
         android:paddingBottom="20dp"
         android:gravity="center"
-        android:background="#92278f"
-        android:textSize="20sp"
+        android:background="@drawable/effect_paars"
+        android:textSize="16sp"
         android:textColor="#ffffff"
-        android:transitionName="myProfile"
+        android:transitionName="myProfile_1"
         android:text="@string/profiel_1" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:contentDescription="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@+id/textview_boven"
-        android:background="#9c9c9c" />
 
 <LinearLayout
     android:id="@+id/linearLayout1"
@@ -38,7 +30,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textColor="#ffffff"
         android:text="@string/profiel_2" />
 
@@ -46,7 +38,9 @@
         android:id="@+id/linearLayout2"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="bottom">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -58,7 +52,8 @@
             android:layout_marginTop="5dp"
             android:padding="1dp"
             android:background="@drawable/border_grijs"
-            android:src="@drawable/plusje_klein"
+            android:transitionName="myProfile_2"
+            android:src="@drawable/profiel_plus"
             android:clickable="true"
             android:onClick="plaatje" />
 
@@ -68,14 +63,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="40dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:padding="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:drawableRight="@drawable/pen"
             android:inputType="textNoSuggestions"
+            android:textSize="16sp"
             android:textCursorDrawable="@drawable/cursor_paars"
-            android:background="@drawable/border_grijs"
-            android:maxLength="20"/>
+            android:background="@drawable/streep"
+            android:maxLength="20" />
 
     </LinearLayout>
 
@@ -85,9 +82,9 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textColor="#ffffff"
         android:text="@string/profiel_3" />
 
@@ -98,11 +95,16 @@
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
-        android:padding="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:drawableRight="@drawable/pen"
         android:inputType="textEmailAddress"
+        android:textSize="16sp"
         android:textCursorDrawable="@drawable/cursor_paars"
         android:fontFamily="sans-serif"
-        android:background="@drawable/border_grijs"/>
+        android:background="@drawable/streep"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -110,9 +112,9 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textColor="#ffffff"
         android:text="@string/profiel_4" />
 
@@ -123,11 +125,16 @@
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
-        android:padding="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:drawableRight="@drawable/pen"
         android:inputType="textPassword"
+        android:textSize="16sp"
         android:textCursorDrawable="@drawable/cursor_paars"
         android:fontFamily="sans-serif"
-        android:background="@drawable/border_grijs"/>
+        android:background="@drawable/streep"/>
 
     <EditText
         android:id="@+id/editText4"
@@ -136,48 +143,31 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="40dp"
-        android:padding="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:drawableRight="@drawable/pen"
         android:inputType="textPassword"
+        android:textSize="16sp"
         android:textCursorDrawable="@drawable/cursor_paars"
         android:fontFamily="sans-serif"
-        android:background="@drawable/border_grijs"
-        android:hint="@string/profiel_5" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:textSize="20sp"
-        android:textColor="#92278f"
-        android:text="@string/profiel_6"
-        android:clickable="true"
-        android:onClick="uitloggen" />
+        android:background="@drawable/streep" />
 
 </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:contentDescription="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_above="@+id/textview_onder"
-        android:background="#9c9c9c" />
 
     <TextView
         android:id="@+id/textview_onder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:paddingTop="20dp"
+        android:paddingTop="15dp"
         android:paddingBottom="20dp"
         android:gravity="center"
-        android:background="#464646"
-        android:textSize="20sp"
+        android:background="@drawable/effect_grijs"
+        android:textSize="16sp"
         android:textColor="#ffffff"
-        android:text="@string/profiel_7"
+        android:text="@string/profiel_6"
         android:clickable="true"
         android:onClick="opslaan" />
 

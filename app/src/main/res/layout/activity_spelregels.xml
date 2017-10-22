@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:id="@+id/textview_boven"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:background="@drawable/effect_oranje"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:transitionName="Spelregels"
+        android:text="@string/spelregels_1" />
+
+    <TextView android:id="@+id/pagina"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="10dp"
+        android:textSize="16dp"
+        android:text="@string/spelregels_2" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="30dp"
+        android:text="@string/sluiten"
+        android:onClick="sluiten"
+        android:visibility="gone"/>
+
+</FrameLayout>

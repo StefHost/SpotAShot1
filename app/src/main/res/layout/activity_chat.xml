@@ -7,27 +7,19 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
+        android:paddingTop="15dp"
         android:paddingBottom="20dp"
         android:gravity="center"
-        android:background="#464646"
-        android:textSize="20sp"
+        android:background="@drawable/effect_grijs"
+        android:textSize="16sp"
         android:textColor="#ffffff"
-        android:text="chat" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:contentDescription="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@+id/textView1"
-        android:background="#9c9c9c" />
+        android:text="@string/chat_1" />
 
     <ListView
         android:id="@+id/listView_chat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/textView1"
         android:layout_marginBottom="40dp"
         android:paddingBottom="10dp"
         android:transcriptMode="alwaysScroll" />
@@ -36,7 +28,7 @@
         android:id="@+id/imageView4"
         android:contentDescription="@+id/imageView4"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:layout_above="@+id/editText"
         android:background="#9c9c9c" />
 
@@ -48,9 +40,12 @@
         android:layout_marginStart="5dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:inputType="textCapSentences"
         android:layout_alignParentBottom="true"
         android:background="#000000"
-        android:hint="@string/chat_1" />
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:hint="@string/chat_2" />
 
     <ImageView
         android:id="@+id/imageView3"

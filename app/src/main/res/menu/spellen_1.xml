@@ -2,10 +2,14 @@
 
     <item
         android:id="@+id/menu_spellen_1"
-        android:title="spel annuleren" />
+        android:title="@string/spellen_melding_3_titel" />
 
     <item
         android:id="@+id/menu_spellen_2"
-        android:title="tegenstander blokkeren" />
+        android:title="" />
+
+    <item
+        android:id="@+id/menu_spellen_3"
+        android:title="" />
 
 </menu>

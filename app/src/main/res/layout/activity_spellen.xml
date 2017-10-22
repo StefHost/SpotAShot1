@@ -7,29 +7,20 @@
         android:id="@+id/textview_boven"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
+        android:paddingTop="15dp"
         android:paddingBottom="20dp"
         android:gravity="center"
-        android:background="#0000ff"
-        android:textSize="20sp"
+        android:background="@drawable/effect_blauw"
+        android:textSize="16sp"
         android:textColor="#ffffff"
         android:transitionName="myGames"
-        android:text="my games" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:contentDescription="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@+id/textview_boven"
-        android:background="#9c9c9c" />
+        android:text="@string/spellen_1" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:paddingTop="10dp"
-        android:layout_below="@+id/imageView1">
+        android:layout_below="@+id/textview_boven">
     </ListView>
 
 </RelativeLayout>

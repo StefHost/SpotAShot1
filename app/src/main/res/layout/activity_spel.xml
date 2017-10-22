@@ -1,315 +1,236 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/RelativeLayout"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/RelativeLayout0"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000">
 
-    <ImageView
-        android:id="@+id/streep"
-        android:contentDescription="@+id/streep"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="29dp"
-        android:background="#9c9c9c" />
+    <include layout="@layout/spelbalk"
+        android:id="@+id/include" />
 
-    <LinearLayout android:id="@+id/linearLayout1"
-        android:orientation="horizontal"
+    <LinearLayout
+        android:id="@+id/balk_boven"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_grijs">
+        android:orientation="horizontal"
+        android:layout_below="@+id/include"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
-        <ImageView
-            android:id="@+id/foto_tegenstander"
-            android:contentDescription="@+id/foto_tegenstander"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:padding="1dp" />
+        <TextView
+            android:id="@+id/textViewMuntjes"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:drawableLeft="@drawable/munt"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/munt"
+            android:paddingLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
 
-        <LinearLayout android:id="@+id/linearLayout2"
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
+        <LinearLayout
+            android:id="@+id/tijden"
+            android:orientation="vertical"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="-2dp"
-            android:layout_marginStart="-2dp"
-            android:background="@drawable/border_grijs">
-
-            <LinearLayout android:id="@+id/linearLayoutNamen"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
-
-                <TextView
-                    android:id="@+id/naam_speler"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:textColor="#ffffff"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/naam_tegenstander"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:textColor="#ffffff"
-                    android:gravity="center" />
-
-            </LinearLayout>
-
-            <LinearLayout android:id="@+id/linearLayoutPunten"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent">
-
-                <LinearLayout android:id="@+id/linearLayoutPuntenSpeler"
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:id="@+id/punten_speler_1"
-                        android:contentDescription="@+id/punten_speler_1"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_speler_2"
-                        android:contentDescription="@+id/punten_speler_2"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_speler_3"
-                        android:contentDescription="@+id/punten_speler_3"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_speler_4"
-                        android:contentDescription="@+id/punten_speler_4"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_speler_5"
-                        android:contentDescription="@+id/punten_speler_5"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_speler_6"
-                        android:contentDescription="@+id/punten_speler_6"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-                    <ImageView
-                        android:id="@+id/punten_speler_7"
-                        android:contentDescription="@+id/punten_speler_7"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-                    <ImageView
-                        android:id="@+id/punten_speler_8"
-                        android:contentDescription="@+id/punten_speler_8"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-                    <ImageView
-                        android:id="@+id/punten_speler_9"
-                        android:contentDescription="@+id/punten_speler_9"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                </LinearLayout>
-
-                <LinearLayout android:id="@+id/linearLayoutPuntenTegenstander"
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:id="@+id/punten_tegenstander_1"
-                        android:contentDescription="@+id/punten_tegenstander_1"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_tegenstander_2"
-                        android:contentDescription="@+id/punten_tegenstander_2"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_tegenstander_3"
-                        android:contentDescription="@+id/punten_tegenstander_3"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_tegenstander_4"
-                        android:contentDescription="@+id/punten_tegenstander_4"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_tegenstander_5"
-                        android:contentDescription="@+id/punten_tegenstander_5"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_tegenstander_6"
-                        android:contentDescription="@+id/punten_tegenstander_6"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_tegenstander_7"
-                        android:contentDescription="@+id/punten_tegenstander_7"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_tegenstander_8"
-                        android:contentDescription="@+id/punten_tegenstander_8"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                    <ImageView
-                        android:id="@+id/punten_tegenstander_9"
-                        android:contentDescription="@+id/punten_tegenstander_9"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginEnd="2dp"
-                        android:src="@drawable/kleur_uit" />
-
-                </LinearLayout>
-
-            </LinearLayout>
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
 
             <TextView
-                android:id="@+id/chat"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dp"
-                android:padding="10dp"
-                android:gravity="center"
-                android:background="@drawable/chat"
-                android:textSize="20sp"
-                android:textColor="#000000"
-                android:clickable="true"
-                android:onClick="chat" />
-
-            <LinearLayout android:id="@+id/linearLayoutBeoordelen"
-                android:orientation="vertical"
+                android:id="@+id/tijd"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="2dp"
+                android:text="00:00:00"/>
+
+            <LinearLayout
+                android:id="@+id/tijdbalk"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/beoordelen_speler"
-                    android:contentDescription="@+id/beoordelen_speler"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1" />
+                    android:id="@+id/tijd_aan"
+                    android:contentDescription="@+id/tijd_aan"
+                    android:layout_width="50dp"
+                    android:layout_height="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/grijs" />
 
                 <ImageView
-                    android:id="@+id/beoordelen_tegenstander"
-                    android:contentDescription="@+id/beoordelen_tegenstander"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1" />
+                    android:id="@+id/tijd_uit"
+                    android:contentDescription="@+id/tijd_uit"
+                    android:layout_width="50dp"
+                    android:layout_height="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/grijs_uit" />
 
             </LinearLayout>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/beurt"
+            android:orientation="horizontal"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/rondje_1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/vierkant_grijs"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:text="1" />
+
+            <TextView
+                android:id="@+id/rondje_2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/vierkant_grijs"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:text="2" />
+
+            <ImageView
+                android:id="@+id/skip_beurt"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:clickable="true"
+                android:onClick="beurt_skippen"
+                android:paddingLeft="8dp"
+                android:paddingRight="6dp"
+                android:background="@drawable/rondje_uit_grijs"
+                android:src="@drawable/beurt_skippen_aan"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tekst"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        android:visibility="invisible"
-        android:text="Het spel\ngaat beginnen!" />
+
+    <LinearLayout
+        android:id="@+id/achtergronden_verticaal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/balk_boven"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/achtergrond_147"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="365dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/achtergrond_1v"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/achtergrond_4v"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/achtergrond_7v"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/achtergrond_258"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="365dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/achtergrond_2v"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/achtergrond_5v"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/achtergrond_8v"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/achtergrond_369"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="365dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/achtergrond_3v"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/achtergrond_6v"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/achtergrond_9v"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout1">
+        android:layout_below="@+id/balk_boven"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:id="@+id/achtergrond_123"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_marginTop="30dp">
+            android:layout_height="120dp"
+            android:layout_marginTop="0dp"
+            android:paddingTop="0dp">
 
             <TextView
                 android:id="@+id/achtergrond_1"
@@ -338,50 +259,106 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/schaduw_123"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="0dp"
+            android:paddingTop="0dp">
+
+            <TextView
+                android:id="@+id/schaduw_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/schaduw" />
+
+            <TextView
+                android:id="@+id/schaduw_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/schaduw" />
+
+            <TextView
+                android:id="@+id/schaduw_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/schaduw" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/spelvakken_123"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginTop="35dp">
+            android:layout_marginTop="0dp">
 
             <TextView
                 android:id="@+id/spelvak_1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="#ffffff"
                 android:tag="1"
                 android:clickable="true"
-                android:onClick="foto" />
+                android:onClick="foto"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp" />
 
             <TextView
                 android:id="@+id/spelvak_2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="#ffffff"
                 android:tag="2"
                 android:clickable="true"
-                android:onClick="foto" />
+                android:onClick="foto"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp" />
 
             <TextView
                 android:id="@+id/spelvak_3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="#ffffff"
                 android:tag="3"
                 android:clickable="true"
-                android:onClick="foto" />
+                android:onClick="foto"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp" />
 
         </LinearLayout>
 
@@ -390,7 +367,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginTop="35dp">
+            android:layout_marginTop="0dp">
 
             <TextView
                 android:id="@+id/kruis_1"
@@ -416,65 +393,171 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/muntjes_123"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                android:id="@+id/munt_1"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/munt_2"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/munt_3"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/tijd_123"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/spelvakken_123">
+            android:layout_below="@+id/spelvakken_123"
+            android:layout_marginTop="-20dp">
 
-            <ImageView
-                android:id="@+id/tijd_1_aan"
-                android:contentDescription="@+id/tijd_1_aan"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/groen"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/tijd_1_uit"
-                android:contentDescription="@+id/tijd_1_uit"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/border_grijs"/>
+                <ImageView
+                    android:id="@+id/beoordelen_1"
+                    android:contentDescription="@+id/beoordelen_1"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/beoordelen"
+                    android:visibility="invisible"/>
 
-            <ImageView
-                android:id="@+id/tijd_2_aan"
-                android:contentDescription="@+id/tijd_2_aan"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/groen"/>
+                <ImageView
+                    android:id="@+id/tijd_1_uit"
+                    android:contentDescription="@+id/tijd_1_uit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs_uit"
+                    android:visibility="invisible"/>
 
-            <ImageView
-                android:id="@+id/tijd_2_uit"
-                android:contentDescription="@+id/tijd_2_uit"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/border_grijs"/>
+                <ImageView
+                    android:id="@+id/tijd_1_aan"
+                    android:contentDescription="@+id/tijd_1_aan"
+                    android:layout_width="0dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs" />
 
-            <ImageView
-                android:id="@+id/tijd_3_aan"
-                android:contentDescription="@+id/tijd_3_aan"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/groen"/>
+            </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/tijd_3_uit"
-                android:contentDescription="@+id/tijd_3_uit"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/border_grijs"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/beoordelen_2"
+                    android:contentDescription="@+id/beoordelen_2"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/beoordelen"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_2_uit"
+                    android:contentDescription="@+id/tijd_2_uit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs_uit"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_2_aan"
+                    android:contentDescription="@+id/tijd_2_aan"
+                    android:layout_width="0dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/beoordelen_3"
+                    android:contentDescription="@+id/beoordelen_3"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/beoordelen"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_3_uit"
+                    android:contentDescription="@+id/tijd_3_uit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs_uit"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_3_aan"
+                    android:contentDescription="@+id/tijd_3_aan"
+                    android:layout_width="0dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -482,8 +565,9 @@
             android:id="@+id/achtergrond_456"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_below="@+id/achtergrond_123">
+            android:layout_height="120dp"
+            android:layout_below="@+id/achtergrond_123"
+            android:layout_marginTop="0dp">
 
             <TextView
                 android:id="@+id/achtergrond_4"
@@ -512,11 +596,55 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/schaduw_456"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="4dp"
+            android:paddingTop="0dp"
+            android:layout_below="@+id/achtergrond_123">
+
+            <TextView
+                android:id="@+id/schaduw_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/schaduw" />
+
+            <TextView
+                android:id="@+id/schaduw_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/schaduw" />
+
+            <TextView
+                android:id="@+id/schaduw_6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/schaduw" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/spelvakken_456"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_below="@+id/spelvakken_123">
 
             <TextView
@@ -524,39 +652,51 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="#ffffff"
                 android:tag="4"
                 android:clickable="true"
-                android:onClick="foto" />
+                android:onClick="foto"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp" />
 
             <TextView
                 android:id="@+id/spelvak_5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="#ffffff"
                 android:tag="5"
                 android:clickable="true"
-                android:onClick="foto" />
+                android:onClick="foto"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp" />
 
             <TextView
                 android:id="@+id/spelvak_6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="#ffffff"
                 android:tag="6"
                 android:clickable="true"
-                android:onClick="foto" />
+                android:onClick="foto"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp" />
 
         </LinearLayout>
 
@@ -565,7 +705,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_below="@+id/spelvakken_123">
 
             <TextView
@@ -592,66 +732,172 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/muntjes_456"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="0dp"
+            android:layout_below="@+id/spelvakken_123">
+
+            <TextView
+                android:id="@+id/munt_4"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/munt_5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/munt_6"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/tijd_456"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/spelvakken_456">
+            android:layout_below="@+id/spelvakken_456"
+            android:layout_marginTop="-20dp">
 
-            <ImageView
-                android:id="@+id/tijd_4_aan"
-                android:contentDescription="@+id/tijd_4_aan"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/groen"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/tijd_4_uit"
-                android:contentDescription="@+id/tijd_4_uit"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/border_grijs"/>
+                <ImageView
+                    android:id="@+id/beoordelen_4"
+                    android:contentDescription="@+id/beoordelen_4"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/beoordelen"
+                    android:visibility="invisible"/>
 
-            <ImageView
-                android:id="@+id/tijd_5_aan"
-                android:contentDescription="@+id/tijd_5_aan"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/groen"/>
+                <ImageView
+                    android:id="@+id/tijd_4_uit"
+                    android:contentDescription="@+id/tijd_4_uit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs_uit"
+                    android:visibility="invisible"/>
 
-            <ImageView
-                android:id="@+id/tijd_5_uit"
-                android:contentDescription="@+id/tijd_5_uit"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/border_grijs"/>
+                <ImageView
+                    android:id="@+id/tijd_4_aan"
+                    android:contentDescription="@+id/tijd_4_aan"
+                    android:layout_width="0dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/groen" />
 
-            <ImageView
-                android:id="@+id/tijd_6_aan"
-                android:contentDescription="@+id/tijd_6_aan"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
+            </RelativeLayout>
 
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/groen"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/tijd_6_uit"
-                android:contentDescription="@+id/tijd_6_uit"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/border_grijs"/>
+                <ImageView
+                    android:id="@+id/beoordelen_5"
+                    android:contentDescription="@+id/beoordelen_5"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/beoordelen"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_5_uit"
+                    android:contentDescription="@+id/tijd_5_uit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs_uit"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_5_aan"
+                    android:contentDescription="@+id/tijd_5_aan"
+                    android:layout_width="0dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/groen" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/beoordelen_6"
+                    android:contentDescription="@+id/beoordelen_6"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/beoordelen"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_6_uit"
+                    android:contentDescription="@+id/tijd_6_uit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs_uit"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_6_aan"
+                    android:contentDescription="@+id/tijd_6_aan"
+                    android:layout_width="0dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/groen" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -659,8 +905,10 @@
             android:id="@+id/achtergrond_789"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_below="@+id/achtergrond_456">
+            android:layout_height="120dp"
+            android:layout_below="@+id/achtergrond_456"
+            android:layout_marginTop="0dp"
+            android:paddingTop="0dp">
 
             <TextView
                 android:id="@+id/achtergrond_7"
@@ -689,11 +937,55 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/schaduw_789"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="4dp"
+            android:paddingTop="0dp"
+            android:layout_below="@+id/achtergrond_456">
+
+            <TextView
+                android:id="@+id/schaduw_7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/schaduw" />
+
+            <TextView
+                android:id="@+id/schaduw_8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/schaduw" />
+
+            <TextView
+                android:id="@+id/schaduw_9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/schaduw" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/spelvakken_789"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_below="@+id/spelvakken_456">
 
             <TextView
@@ -701,39 +993,51 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="#ffffff"
                 android:tag="7"
                 android:clickable="true"
-                android:onClick="foto" />
+                android:onClick="foto"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp" />
 
             <TextView
                 android:id="@+id/spelvak_8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="#ffffff"
                 android:tag="8"
                 android:clickable="true"
-                android:onClick="foto" />
+                android:onClick="foto"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp" />
 
             <TextView
                 android:id="@+id/spelvak_9"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
+                android:layout_margin="7dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="#ffffff"
                 android:tag="9"
                 android:clickable="true"
-                android:onClick="foto" />
+                android:onClick="foto"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp" />
 
         </LinearLayout>
 
@@ -742,7 +1046,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_below="@+id/spelvakken_456">
 
             <TextView
@@ -769,65 +1073,172 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/muntjes_789"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="0dp"
+            android:layout_below="@+id/spelvakken_456">
+
+            <TextView
+                android:id="@+id/munt_7"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/munt_8"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/munt_9"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:gravity="bottom" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/tijd_789"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/spelvakken_789">
+            android:layout_below="@+id/spelvakken_789"
+            android:layout_marginTop="-20dp">
 
-            <ImageView
-                android:id="@+id/tijd_7_aan"
-                android:contentDescription="@+id/tijd_7_aan"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/groen"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/tijd_7_uit"
-                android:contentDescription="@+id/tijd_7_uit"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/border_grijs"/>
+                <ImageView
+                    android:id="@+id/beoordelen_7"
+                    android:contentDescription="@+id/beoordelen_7"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/beoordelen"
+                    android:visibility="invisible"/>
 
-            <ImageView
-                android:id="@+id/tijd_8_aan"
-                android:contentDescription="@+id/tijd_8_aan"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/groen"/>
+                <ImageView
+                    android:id="@+id/tijd_7_uit"
+                    android:contentDescription="@+id/tijd_7_uit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs_uit"
+                    android:visibility="invisible"/>
 
-            <ImageView
-                android:id="@+id/tijd_8_uit"
-                android:contentDescription="@+id/tijd_8_uit"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/border_grijs"/>
+                <ImageView
+                    android:id="@+id/tijd_7_aan"
+                    android:contentDescription="@+id/tijd_7_aan"
+                    android:layout_width="0dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/groen" />
 
-            <ImageView
-                android:id="@+id/tijd_9_aan"
-                android:contentDescription="@+id/tijd_9_aan"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/groen"/>
+            </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/tijd_9_uit"
-                android:contentDescription="@+id/tijd_9_uit"
-                android:layout_width="wrap_content"
-                android:layout_height="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/border_grijs"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/beoordelen_8"
+                    android:contentDescription="@+id/beoordelen_8"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/beoordelen"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_8_uit"
+                    android:contentDescription="@+id/tijd_8_uit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/grijs_uit"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_8_aan"
+                    android:contentDescription="@+id/tijd_8_aan"
+                    android:layout_width="0dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/groen" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/beoordelen_9"
+                    android:contentDescription="@+id/beoordelen_9"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/beoordelen"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_9_uit"
+                    android:contentDescription="@+id/tijd_9_uit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/border_grijs"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/tijd_9_aan"
+                    android:contentDescription="@+id/tijd_9_aan"
+                    android:layout_width="0dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/groen" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -835,23 +1246,63 @@
 
     <TextView
         android:id="@+id/gewonnen"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/relativeLayout"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:textSize="20sp"
         android:textColor="#ffffff"
-        android:gravity="center" />
+        android:background="#80000000"
+        android:gravity="center"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tekst"
+        android:layout_width="fill_parent"
+        android:layout_height="365dp"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_above="@+id/info"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/laden"
         android:contentDescription="@+id/laden"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/balk_boven"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:padding="90dp"
-        android:src="@drawable/logo" />
+        android:src="@drawable/oog"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/relativeLayout"
+        android:background="#252525"
+        android:textColor="#807f7f"
+        android:text="@string/spel_10"
+        android:gravity="center" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+
+    <include layout="@layout/profiel"/>
 
 </RelativeLayout>

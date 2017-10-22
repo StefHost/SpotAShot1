@@ -1,76 +1,324 @@
 <resources>
 
-    <string name="app_name">Viewfinder</string>
+    <!-- App -->
+    <string name="app_name" translatable="false">Spot A Shot</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-8094643563031669/9836509237</string>
+    <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-8094643563031669/2313242434</string>
+    <string name="help_versie" translatable="false">1.0</string>
+    <string name="help_scherm" translatable="false">0</string>
 
-    <string name="website_url">http://viewfinder.stefhost.nl</string>
-    <string name="website_paginas">http://viewfinder.stefhost.nl/paginas/app%201.13</string>
+    <!-- Website -->
+    <string name="website_url">http://www.spotashot.nl</string>
+    <string name="website_paginas">http://www.spotashot.nl/paginas/app</string>
 
-    <!--
-    <string name="website_url">http://192.168.178.15/Viewfinder</string>
-    <string name="website_paginas">http://192.168.178.15/Viewfinder/paginas/app%201.09</string>
-    -->
+    <!-- Algemeen -->
+    <string name="ja">YES</string>
+    <string name="nee">NO</string>
+    <string name="ok">OK</string>
+    <string name="sluiten">Close</string>
+    <string name="kleur_1">Blue</string>
+    <string name="kleur_2">Green</string>
+    <string name="kleur_3">Orange</string>
+    <string name="kleur_4">Purple</string>
+    <string name="kleur_5">Red</string>
+    <string name="onderwerp_1">Indoors</string>
+    <string name="onderwerp_2">Outdoors</string>
+    <string name="onderwerp_3">Nature</string>
+    <string name="onderwerp_4">Urban</string>
+    <string name="onderwerp_5">Random</string>
+    <string name="onderwerpen">subjects</string>
+    <string name="een_ogenblik_geduld">One moment please..</string>
+
+    <!-- Tips -->
+    <string name="tip_1">Do you want to cancel or delete a game?\n\nLong press a game and choose one of the two options.</string>
+    <string name="tip_2">Do you want to glance all the pictures that are made?\n\nSwipe from left to right under the playfields.</string>
+    <string name="tip_3">Do you want to zoom while taking a picture?\n\nSwipe to the left or right in the camerascreen.</string>
+    <string name="tip_5">Is there a evaluation icon in your players bar? Then you need to review one or more photos.</string>
+    <string name="tip_6">Are you playing against a international player? Then you can play in your own language.</string>
+    <string name="tip_7">Tap the coin at the top left side of the screen to buy new themes and check your progress!</string>
+
+    <!-- Popups -->
+    <string name="popup_0">Welcome back!</string>
+    <string name="popup_1">Opponent\'s turn!\n\nYou will receive a notification\nwhen it\'s your turn.</string>
+    <string name="popup_2">Make 3 in a row\nand score a point.\n\nNo diagonals!\n\nFirst to reach 2 points wins!</string>
+    <string name="popup_3">A player has 24 hrs to play.\nAfter 24 hrs the turn end.</string>
+    <string name="popup_4">You have one action left!\n\nEach turn has 2 actions.\nTake pictures or change subjects.\n\nThe turn end after 2 actions.</string>
+    <string name="popup_5">Tap this button to end your turn\nprematurely within 24 hrs,\nunregarded the number of actions.</string>
+    <string name="popup_6">Photos from opponent need\nto be judged first.\n\nTap a square\nwith this symbol.</string>
+    <string name="popup_7">Do you want to change a subject?\n\nTap this button.\n\nChanging a subject is 1 action!</string>
+    <string name="popup_8">Collect coins and unlock\nnew themes.\n\nPlay difficult themes and collect\na higher amount of coins.</string>
+    <string name="popup_9">When 3 is a row is made\nthe squares involved are no more\npart of the game.\n\nNo 3 in a row possible\nfor both players,\n9 new subjects!</string>
+    <string name="popup_10">you have one action left!\n\n</string>
+    <string name="popup_10_check">Don\'t show this message again</string>
+    <string name="popup_11">A flashing square is a new subject.</string>
+    <string name="popup_12">Second action is not possible.\nEnd your turn prematurely and continue to 9 new subjects.</string>
+    <string name="popup_13">Your opponent has not played in the last 2 turns.\nYou have won!</string>
+    <string name="popup_14">You have not played in the last 2 turns.\nYou have lost!</string>
+
+    <!-- Foutmeldingen -->
+    <string name="foutmelding_internet">No network connection</string>
+    <string name="foutmelding_server_titel">Server error</string>
+    <string name="foutmelding_server_tekst">Please try again later.</string>
+
+    <!-- Notificaties -->
+    <string name="notificatie_1_titel">New game</string>
+    <string name="notificatie_1_tekst">[naam] has started a new game.</string>
+    <string name="notificatie_2_titel">Game started</string>
+    <string name="notificatie_2_tekst">The game with [naam] has started.</string>
+    <string name="notificatie_3_titel">New topics available</string>
+    <string name="notificatie_3_tekst">Time to take pictures.</string>
+
+    <!--<string name="notificatie_4_titel">Time to review</string>
+    <string name="notificatie_4_tekst">[naam] took a picture.</string>-->
+    <string name="notificatie_4_titel">Game with [naam]</string>
+    <string name="notificatie_4_tekst">Your turn.</string>
+
+    <string name="notificatie_5_titel">Your picture has been rejected</string>
+    <string name="notificatie_5_tekst">Please try again.</string>
+    <string name="notificatie_6_titel">Turn is expired</string>
+    <string name="notificatie_6_tekst">Your turn has expired.\n [aantal] times and you\'ve lost.</string>
+    <string name="notificatie_7_titel">Turn is expired</string>
+    <string name="notificatie_7_tekst">The turn of [naam] has expired.\nYou\'re next.</string>
+    <string name="notificatie_8_titel">New message</string>
+    <string name="notificatie_8_tekst">You have received a message from [naam]</string>
+
+    <string name="notificatie_9_titel">Game is stopping</string>
+    <string name="notificatie_9_tekst">The game with [naam] is going to stop in 1 hour!\nBe fast and play on!</string>
 
     <!-- Welkom -->
-    <string name="beginscherm_1">VIEWFINDER</string>
-    <string name="beginscherm_2">create account</string>
-    <string name="beginscherm_3">login</string>
+    <string name="welkom_1">Create account</string>
+    <string name="welkom_2">Login</string>
 
     <!-- Registreren -->
-    <string name="registreren_1">create account</string>
-    <string name="registreren_2">username</string>
-    <string name="registreren_3">password</string>
-    <string name="registreren_4">repeat password</string>
-    <string name="registreren_5">email</string>
-    <string name="registreren_6">I agree to\u00A0</string>
-    <string name="registreren_7">the terms</string>
-    <string name="registreren_8">confirm</string>
+    <string name="registreren_1">Create account</string>
+    <string name="registreren_2">Username</string>
+    <string name="registreren_3">Password</string>
+    <string name="registreren_4">Repeat password</string>
+    <string name="registreren_5">E-mail</string>
+    <string name="registreren_6">I agree to the\u00A0</string>
+    <string name="registreren_7">conditions</string>
+    <string name="registreren_8">Confirm</string>
+    <string name="registreren_foutmelding_1_titel">No username</string>
+    <string name="registreren_foutmelding_1_tekst">You didn\'t provide a username.\nPlease try again.</string>
+    <string name="registreren_foutmelding_2_titel">No password</string>
+    <string name="registreren_foutmelding_2_tekst">You didn\'t provide a password.\nPlease try again.</string>
+    <string name="registreren_foutmelding_3_titel">Repeat password</string>
+    <string name="registreren_foutmelding_3_tekst">You didn\'t repeat your password.\nPlease try again.</string>
+    <string name="registreren_foutmelding_4_titel">Wrong passwords</string>
+    <string name="registreren_foutmelding_4_tekst">Your passwords do not match.\nPlease try again.</string>
+    <string name="registreren_foutmelding_5_titel">No e-mail address</string>
+    <string name="registreren_foutmelding_5_tekst">You didn\'t provide an e-mail address.\nPlease try again.</string>
+    <string name="registreren_foutmelding_6_titel">Terms</string>
+    <string name="registreren_foutmelding_6_tekst">You didn\'t accept the terms.\nPlease try again.</string>
+    <string name="registreren_melding_1">Registering</string>
+    <string name="registreren_foutmelding_7_titel">Username exists</string>
+    <string name="registreren_foutmelding_7_tekst">This username already exists.\nPlease try again.</string>
+    <string name="registreren_foutmelding_8_titel">E-mail address exists</string>
+    <string name="registreren_foutmelding_8_tekst">This email address already exists.\nPlease try again.</string>
 
     <!-- Voorwaarden -->
-    <string name="voorwaarden_1">the terms</string>
-    <string name="voorwaarden_2">This is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\nThis is a line with text.\n</string>
+    <string name="voorwaarden_1">Terms and Conditions</string>
 
     <!-- Inloggen -->
-    <string name="inloggen_1">login</string>
-    <string name="inloggen_2">username</string>
-    <string name="inloggen_3">password</string>
-    <string name="inloggen_4">forgot password</string>
-    <string name="inloggen_5">confirm</string>
+    <string name="inloggen_1">Login</string>
+    <string name="inloggen_2">Username</string>
+    <string name="inloggen_3">Password</string>
+    <string name="inloggen_4">Forgot password</string>
+    <string name="inloggen_5">Confirm</string>
+    <string name="inloggen_melding_1">Enabling notifications</string>
+    <string name="inloggen_foutmelding_1_titel">No username</string>
+    <string name="inloggen_foutmelding_1_tekst">You didn\'t provide a username.\nPlease try again.</string>
+    <string name="inloggen_foutmelding_2_titel">No password</string>
+    <string name="inloggen_foutmelding_2_tekst">You didn\'t provide a password.\nPlease try again.</string>
+    <string name="inloggen_melding_2">Logging in</string>
+    <string name="inloggen_foutmelding_3_titel">Wrong username</string>
+    <string name="inloggen_foutmelding_3_tekst">You provided a wrong username.\nPlease try again.</string>
+    <string name="inloggen_foutmelding_4_titel">Wrong password</string>
+    <string name="inloggen_foutmelding_4_tekst">You provided a wrong password.\nPlease try again.</string>
+    <string name="inloggen_melding_3">Connecting</string>
+    <string name="inloggen_melding_4_titel">E-mail</string>
+    <string name="inloggen_melding_4_tekst_a">You have received an e-mail at</string>
+    <string name="inloggen_melding_4_tekst_b">with instructions to reset your password.</string>
 
     <!-- Home -->
-    <string name="home_1">new game</string>
-    <string name="home_2">my games</string>
-    <string name="home_3">my profile</string>
-    <string name="home_4">help</string>
-    <string name="menu_home_1">Clear Database</string>
-    <string name="menu_home_2">Speel als Test1</string>
-    <string name="menu_home_3">Speel als Test2</string>
+    <string name="home_1">New game</string>
+    <string name="home_2">My games</string>
+    <string name="home_3">My profile</string>
+    <string name="home_4">Rules</string>
+    <string name="home_5">Last played game</string>
+    <string name="home_6"> </string>
+    <string name="home_7">Themes</string>
+    <string name="home_8">Buying themes with money is not possible yet..</string>
+    <string name="home_9">Do you want to buy this theme for</string>
+    <string name="home_10">coins?</string>
 
     <!-- Nieuw spel -->
-    <string name="nieuw_spel_1">new game</string>
-    <string name="nieuw_spel_2">points for win</string>
-    <string name="nieuw_spel_3">photocheck</string>
-    <string name="nieuw_spel_4">yes</string>
-    <string name="nieuw_spel_5">no</string>
-    <string name="nieuw_spel_6">choose opponent</string>
+    <string name="nieuw_spel_1">New game</string>
+    <string name="nieuw_spel_2">Points to win</string>
+    <string name="nieuw_spel_3">Choose color</string>
+    <string name="nieuw_spel_4">Choose theme</string>
+    <string name="nieuw_spel_5">Choose game mode</string>
+    <string name="nieuw_spel_6">Opponent</string>
+    <string name="nieuw_spel_7">Username or email</string>
+    <string name="nieuw_spel_8">Random player</string>
+    <string name="nieuw_spel_9">Send invitation</string>
+    <string name="nieuw_spel_10">Only from the same country</string>
+    <string name="nieuw_spel_opties_1">Points to win</string>
+    <string name="nieuw_spel_opties_2">Play color</string>
+    <string name="nieuw_spel_opties_3">Theme</string>
+    <string name="nieuw_spel_opties_4">Friends</string>
+    <string name="nieuw_spel_opties_5">Game mode</string>
+    <string name="nieuw_spel_speltype_1">Slowly, take photographs in turns</string>
+    <string name="nieuw_spel_speltype_2">Quickly, take photographs without limits</string>
+    <string name="nieuw_spel_speltype_3">Slowly</string>
+    <string name="nieuw_spel_speltype_4">Quick</string>
+    <string name="nieuw_spel_melding_1">Searching for player</string>
+    <string name="nieuw_spel_melding_2"> is added to your friend list!</string>
+    <string name="nieuw_spel_foutmelding_1_titel">Need some friends?</string>
+    <string name="nieuw_spel_foutmelding_1_tekst">You can\'t play against yourself.\nPlease try again.</string>
+    <string name="nieuw_spel_foutmelding_2_titel">No username or email address</string>
+    <string name="nieuw_spel_foutmelding_2_tekst">You didn\'t provide a username or e-mail address.\nPlease try again.</string>
+    <string name="nieuw_spel_foutmelding_3_titel">Wrong username</string>
+    <string name="nieuw_spel_foutmelding_3_tekst">You provided a wrong username.\nPlease try again.</string>
+    <string name="nieuw_spel_foutmelding_4_titel">Wrong e-mail address</string>
+    <string name="nieuw_spel_foutmelding_4_tekst">You provided a wrong email address.\nPlease try again.</string>
+    <string name="nieuw_spel_melding_3_titel">Random opponent</string>
+    <string name="nieuw_spel_melding_3_tekst">Are you sure you want to play against a random opponent?</string>
+    <string name="nieuw_spel_melding_4">Searching for random opponent</string>
+    <string name="nieuw_spel_foutmelding_6_titel">No play color</string>
+    <string name="nieuw_spel_foutmelding_6_tekst">You didn\'t choose a play color.\nPlease try again.</string>
+    <string name="nieuw_spel_foutmelding_7_titel">No theme</string>
+    <string name="nieuw_spel_foutmelding_7_tekst">You didn\'t choose a theme.\nPlease try again.</string>
+    <string name="nieuw_spel_melding_5">Inviting opponent</string>
+    <string name="nieuw_spel_melding_6">Game created!</string>
+
+    <string name="nieuw_spel_melding_7_titel">Invite player</string>
+    <string name="nieuw_spel_melding_7_tekst">Do you want to send an email to the chosen e-mail address with an invite to Spot a Shot?</string>
+    <string name="nieuw_spel_melding_8">Sending email</string>
+    <string name="nieuw_spel_melding_9">Player is invited!</string>
+    <string name="nieuw_spel_foutmelding_9">Your opponent doesn\'t have this theme unlocked yet.</string>
+
+    <!-- Spellen -->
+    <string name="spellen_1">My games</string>
+    <string name="spellen_2">Select play color</string>
+    <string name="spellen_3">Waiting for confirmation</string>
+    <string name="spellen_4">WON</string>
+    <string name="spellen_5">LOST</string>
+    <string name="spellen_6">Canceled by opponent</string>
+    <string name="spellen_7">Your turn</string>
+    <string name="spellen_8">Opponents turn</string>
+    <string name="spellen_9">Long press a game for more options</string>
+    <string name="spellen_melding_1">Loading games</string>
+    <string name="spellen_melding_2">Starting game</string>
+    <string name="spellen_melding_3_titel">Cancel game</string>
+    <string name="spellen_melding_3_tekst">Do you want to cancel the game?</string>
+    <string name="spellen_melding_4">Cancelling game</string>
+    <string name="spellen_melding_5_titel">Block opponent</string>
+    <string name="spellen_melding_5_tekst1">Do you want to block </string>
+    <string name="spellen_melding_5_tekst2"></string>
+    <string name="spellen_melding_6">Blocking opponent</string>
+    <string name="spellen_melding_7_titel">Delete game</string>
+    <string name="spellen_melding_7_tekst">Do you want to delete the game?</string>
+    <string name="spellen_melding_8">Deleting game</string>
+    <string name="spellen_melding_9">Reloading games</string>
+    <string name="spellen_melding_10">Opponent is blocked!</string>
+    <string name="spellen_melding_11">You need to accept this permission to show your opponent\'s profile picture.</string>
+    <string name="spellen_menu_2"> </string>
+    <string name="spellen_menu_2_1">Add</string>
+    <string name="spellen_menu_2_2">to friend list</string>
+    <string name="spellen_menu_3">Block</string>
+    <string name="spellen_menu_5">Rematch</string>
 
     <!-- Spel -->
-    <string name="spel_1">Je hebt het spel gewonnen!</string>
-    <string name="spel_2">Je hebt het spel verloren!</string>
+    <string name="spel_melding_1_titel">Too late</string>
+    <string name="spel_melding_1_tekst">Your opponent already made this picture!</string>
+    <string name="spel_1">WON</string>
+    <string name="spel_2">LOST</string>
+    <string name="spel_3">The game begins</string>
+    <string name="spel_4">New subjects</string>
+    <string name="spel_5">3 in a row!</string>
+    <string name="spel_6">No 3 in a row possible</string>
+    <string name="spel_7">All subjects played</string>
+    <string name="spel_8">You have won!</string>
+    <string name="spel_9">You have lost!</string>
+    <string name="spel_10">&lt;&lt; Swipe here and see all photos &gt;&gt;</string>
+    <string name="spel_melding_2">You need to accept this permission to use your camera.</string>
+    <string name="spel_melding_3_titel">End turn</string>
+    <string name="spel_melding_3_tekst">Are you sure you want to end your turn earlier?</string>
 
-    <!-- Profiel -->
-    <string name="profiel_1">my profile</string>
-    <string name="profiel_2">change photo / username</string>
-    <string name="profiel_3">change email address</string>
-    <string name="profiel_4">change password</string>
-    <string name="profiel_5">repeat password</string>
-    <string name="profiel_6">logout</string>
-    <string name="profiel_7">save profile</string>
+    <!-- Foto maken -->
+    <string name="foto_maken_melding_1">Use this photo?</string>
+    <string name="foto_maken_melding_2">Uploading photo</string>
+    <string name="foto_maken_melding_3_titel">Change subject</string>
+    <string name="foto_maken_melding_3_tekst">Are you sure you want to change this subject?</string>
+    <string name="foto_maken_melding_4">Cancelling subject</string>
+    <string name="foto_maken_1">It\'s not your turn..</string>
+    <string name="foto_maken_2">Change\nsubject</string>
 
-    <!-- Help -->
-    <string name="help_1">help</string>
-    <string name="help_2">●○○</string>
+    <!-- Foto beoordelen -->
+    <string name="foto_beoordelen_melding_1_titel">Reject photo</string>
+    <string name="foto_beoordelen_melding_1_tekst">Do you want to reject this photo?</string>
+    <string name="foto_beoordelen_melding_2">Rejecting photo</string>
+    <string name="foto_beoordelen_melding_3">Approving photo</string>
 
     <!-- Chat -->
-    <string name="chat_1">Typ je bericht..</string>
+    <string name="chat_1">Chat</string>
+    <string name="chat_2">Type your message..</string>
+    <string name="chat_melding_1">Loading chat</string>
+    <string name="chat_3">You:</string>
+    <string name="chat_melding_2">Sending message</string>
+
+    <!-- Profiel -->
+    <string name="profiel_1">My profile</string>
+    <string name="profiel_2">Change photo / username</string>
+    <string name="profiel_3">Change email address</string>
+    <string name="profiel_4">Change password</string>
+    <string name="profiel_5">Repeat password</string>
+    <string name="profiel_6">Save profile</string>
+    <string name="melding_profiel_1">Uploading photo</string>
+    <string name="profiel_foutmelding_1_titel">No password</string>
+    <string name="profiel_foutmelding_1_tekst">You didn\'t provide a password.\nPlease try again.</string>
+    <string name="profiel_foutmelding_2_titel">Repeat password</string>
+    <string name="profiel_foutmelding_2_tekst">You didn\'t repeat your password.\nPlease try again.</string>
+    <string name="profiel_foutmelding_3_titel">Wrong passwords</string>
+    <string name="profiel_foutmelding_3_tekst">Your passwords do not match.\nPlease try again.</string>
+    <string name="melding_profiel_2">Saving profile</string>
+    <string name="profiel_foutmelding_4_titel">Username exists</string>
+    <string name="profiel_foutmelding_4_tekst">This username already exists.\nPlease try again.</string>
+    <string name="profiel_foutmelding_5_titel">E-mail address exists</string>
+    <string name="profiel_foutmelding_5_tekst">This email address already exists.\nPlease try again.</string>
+    <string name="melding_profiel_3">Profile saved!</string>
+    <string name="profiel_melding_1">You need to accept this permission to choose a profile picture.</string>
+
+    <!-- Profiel tegenstander -->
+    <string name="profiel_tegenstander_1">Add to friend list</string>
+    <string name="profiel_tegenstander_2">Block</string>
+    <string name="profiel_tegenstander_3">Coins:</string>
+    <string name="profiel_tegenstander_4">Photos:</string>
+    <string name="profiel_tegenstander_5">Games won:</string>
+    <string name="profiel_tegenstander_6">Games lost:</string>
+
+    <!-- Spelregels -->
+    <string name="spelregels_1">Rules</string>
+    <string name="spelregels_2">●○○○○○○○○○○○</string>
+
+    <!-- Instellingen -->
+    <string name="instellingen_1">Notifications</string>
+    <string name="instellingen_2">Invitations</string>
+    <string name="instellingen_3">Start of game</string>
+    <string name="instellingen_4">New topics</string>
+    <string name="instellingen_5">Change turn</string>
+    <string name="instellingen_6">Chat messages</string>
+    <string name="instellingen_7">Notification sound</string>
+    <string name="instellingen_8">More options</string>
+    <string name="instellingen_9">Last played game on homescreen</string>
+    <string name="instellingen_10">Deblock opponent</string>
+    <string name="instellingen_11">Logout</string>
+    <string name="instellingen_12">Delete account</string>
+    <string name="instellingen_melding_1_titel">Deblock opponent</string>
+    <string name="instellingen_melding_2_titel">Logout</string>
+    <string name="instellingen_melding_2_tekst">Are you sure you want to log out?</string>
+    <string name="instellingen_melding_3_titel">Delete account</string>
+    <string name="instellingen_melding_3_tekst">Are you sure you want to delete your account?</string>
 
 </resources>

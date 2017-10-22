@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="nl.stefhost.viewfinder" >
+    package="nl.stefhost.spotashot" >
 
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+	
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="nl.stefhost.viewfinder.permission.C2D_MESSAGE" />
-    <permission android:name="nl.stefhost.viewfinder.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="nl.stefhost.spotashot.permission.C2D_MESSAGE" />
+    <permission android:name="nl.stefhost.spotashot.permission.C2D_MESSAGE" android:protectionLevel="signature" />
 
     <uses-feature android:name="android.hardware.camera" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo_22_11"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
 
@@ -28,7 +29,7 @@
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="nl.stefhost.viewfinder" />
+                <category android:name="nl.stefhost.spotashot" />
             </intent-filter>
         </receiver>
         <service android:name=".GcmIntentService" />
@@ -40,11 +41,6 @@
 
         <activity
             android:name=".Registreren"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity
-            android:name=".Voorwaarden"
             android:screenOrientation="portrait">
         </activity>
 
@@ -69,12 +65,14 @@
 
         <activity
             android:name=".Spellen"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Home">
         </activity>
 
         <activity
             android:name=".Spel"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Home">
         </activity>
 
         <activity
@@ -98,12 +96,23 @@
         </activity>
 
         <activity
-            android:name=".Help"
+            android:name=".Spelregels"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
             android:name=".Chat"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Home">
+        </activity>
+
+        <activity
+            android:name=".Instellingen"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Instellingen_2"
             android:screenOrientation="portrait">
         </activity>
 
