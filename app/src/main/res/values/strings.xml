@@ -30,7 +30,7 @@
     <string name="een_ogenblik_geduld">One moment please..</string>
 
     <!-- Tips -->
-    <string name="tip_1">Do you want to cancel or delete a game?\n\nLong press a game and choose one of the two options.</string>
+    <string name="tip_1">Do you want to cancel or delete a game?\n\nLong press a game for options.</string>
     <string name="tip_2">Do you want to glance all the pictures that are made?\n\nSwipe from left to right under the playfields.</string>
     <string name="tip_3">Do you want to zoom while taking a picture?\n\nSwipe to the left or right in the camerascreen.</string>
     <string name="tip_5">Is there a evaluation icon in your players bar? Then you need to review one or more photos.</string>

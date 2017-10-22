@@ -23,7 +23,7 @@
     <string name="een_ogenblik_geduld">Bitte warten..</string>
 
     <!-- Tips -->
-    <string name="tip_1">Wollen Sie ein Spiel abbrechen oder löschen?\n\nLang drücken Sie auf ein Spiel und wählen eine der Optionen.</string>
+    <string name="tip_1">Wollen Sie ein Spiel abbrechen oder löschen?\n\nLang drücken Sie auf ein Spiel für der Optionen.</string>
     <string name="tip_2">Wollen Sie alle aufgenommenen Bilder sehen?\n\nSwipe von links nach rechts unter den Spielfeldern.</string>
     <string name="tip_3">Wollen Sie zu vergrößern, während der Aufnahme eines Bildes?\n\nSwipe nach links oder rechts in der Kamera-Bildschirm.</string>
     <string name="tip_5">Gibt es ein Bewertungssymbol in der Spieler-Bar? Dann müssen Sie ein oder mehrere Fotos zu beurteilen.</string>

@@ -21,11 +21,11 @@ android {
     productFlavors {
         gratis {
             applicationId "nl.stefhost.spotashot.gratis"
-            versionName "2.05-gratis"
+            versionName "2.06-gratis"
         }
         betaald {
             applicationId "nl.stefhost.spotashot.betaald"
-            versionName "2.05-betaald"
+            versionName "2.06-betaald"
         }
     }
 }

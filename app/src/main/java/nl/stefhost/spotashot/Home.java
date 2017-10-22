@@ -393,6 +393,12 @@ public class Home extends AppCompatActivity {
             textView_naam_tegenstander.setText(naam_tegenstander);
             textView_chat.setText(chat);
 
+            if (Integer.parseInt(chat) > 0){
+                textView_chat.startAnimation(myAnimation);
+            }else{
+                textView_chat.clearAnimation();
+            }
+
             TextView textView = (TextView) findViewById(R.id.textView);
             Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/futura.ttf");
             Typeface typeface_bold = Typeface.createFromAsset(getAssets(), "fonts/futura_bold.ttf");
@@ -658,7 +664,8 @@ public class Home extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                builder.show();
+                // Tijdelijk uitschakelen tijdens testen
+                //builder.show();
             }
         }
 

@@ -237,6 +237,10 @@ public class arrayAdapter extends ArrayAdapter<String> {
         textView_chat.setText(arrayList_chat.get(position));
         textView_chat.setTag(arrayList_id.get(position));
 
+        if (Integer.parseInt(arrayList_chat.get(position)) > 0){
+            textView_chat.startAnimation(myAnimation);
+        }
+
         if (arrayList_thema.get(position).equals("binnen")){
             textView_thema.setText(context.getString(R.string.onderwerp_1));
         }else if (arrayList_thema.get(position).equals("buiten")){
