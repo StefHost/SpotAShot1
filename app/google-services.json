@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "533586081649",
+    "firebase_url": "https://spot-a-shot.firebaseio.com",
+    "project_id": "spot-a-shot",
+    "storage_bucket": "spot-a-shot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533586081649:android:8cd7159c86c95fbc",
+        "android_client_info": {
+          "package_name": "nl.stefhost.spotashot.gratis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533586081649-bh1vr53hjo3i2bg44v5oinrqqm26g1i0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPql6j0h8kUcRHX4i-_8oIvzlDsH1w_Dw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533586081649:android:e372e62494af08d5",
+        "android_client_info": {
+          "package_name": "nl.stefhost.spotashot.betaald"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533586081649-bh1vr53hjo3i2bg44v5oinrqqm26g1i0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPql6j0h8kUcRHX4i-_8oIvzlDsH1w_Dw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
