@@ -736,7 +736,7 @@ public class Home extends AppCompatActivity {
             }else{
                 prijs2.setBackground(drawable_ster_grijs);
             }
-        }else if (aantal_muntjes > 999) {
+        }else if (aantal_muntjes > 499) {
             thema2.setTextColor(Color.parseColor("#ffffff"));
             muntjes2.setTextColor(Color.parseColor("#ffffff"));
         }else{
@@ -757,7 +757,7 @@ public class Home extends AppCompatActivity {
             }else{
                 prijs3.setBackground(drawable_ster_grijs);
             }
-        }else if (aantal_muntjes > 1999) {
+        }else if (aantal_muntjes > 1499) {
             thema3.setTextColor(Color.parseColor("#ffffff"));
             muntjes3.setTextColor(Color.parseColor("#ffffff"));
         }else{
@@ -778,7 +778,7 @@ public class Home extends AppCompatActivity {
             }else{
                 prijs4.setBackground(drawable_ster_grijs);
             }
-        }else if (aantal_muntjes > 1999) {
+        }else if (aantal_muntjes > 1499) {
             thema4.setTextColor(Color.parseColor("#ffffff"));
             muntjes4.setTextColor(Color.parseColor("#ffffff"));
         }else{
@@ -799,7 +799,7 @@ public class Home extends AppCompatActivity {
             }else{
                 prijs5.setBackground(drawable_ster_grijs);
             }
-        }else if (aantal_muntjes > 2499) {
+        }else if (aantal_muntjes > 1999) {
             thema5.setTextColor(Color.parseColor("#ffffff"));
             muntjes5.setTextColor(Color.parseColor("#ffffff"));
         }else{
@@ -888,17 +888,19 @@ public class Home extends AppCompatActivity {
         int kosten = 0;
 
         if (thema.equals("2")){
-            kosten = 1000;
+            kosten = 500;
         }else if (thema.equals("3")){
-            kosten = 2000;
+            kosten = 1500;
         }else if(thema.equals("4")){
-            kosten = 2000;
+            kosten = 1500;
         }else if(thema.equals("5")){
-            kosten = 2500;
+            kosten = 2000;
         }
         int aantal_muntjes = Integer.parseInt(muntjes);
 
-        if (kosten > aantal_muntjes){
+        if (themas.contains(thema)){
+            Log.d("SAS", "al gekocht");
+        }else if (kosten > aantal_muntjes){
             Log.d("SAS", "te duur!");
         }else{
             Log.d("SAS", "kopen maar!");
@@ -975,8 +977,12 @@ public class Home extends AppCompatActivity {
     }
 
     public void kopen_geld(View view) {
-        Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.home_8), Toast.LENGTH_LONG);
-        toast.show();
+        if (themas.contains(thema)) {
+            Log.d("SAS", "al gekocht");
+        }else{
+            Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.home_8), Toast.LENGTH_LONG);
+            toast.show();
+        }
     }
 
     public void kies_thema(View view) {

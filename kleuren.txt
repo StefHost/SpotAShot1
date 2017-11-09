@@ -1,0 +1,10 @@
+licht groen	598527
+donker groen	197b30
+licht blauw	0072bc
+donker blauw	0054a6
+licht paars	755295
+donker paars	662d91
+licht oranje	f58040
+donker oranje	f26522
+licht grijs	555555
+donker grijs	464646
