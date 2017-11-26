@@ -135,6 +135,7 @@ public class Home extends AppCompatActivity {
         laatste_spel = sharedPreferences.getString("laatste_spel", "");
         String uitloggen = sharedPreferences.getString("uitloggen", "");
         String spel_homescherm = sharedPreferences.getString("spel_homescherm", "");
+        String reload = sharedPreferences.getString("reload", "");
 
         if (uitloggen.equals("JA")) {
             finish();
@@ -183,6 +184,12 @@ public class Home extends AppCompatActivity {
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo != null) {
             new update().execute();
+        }
+
+        if (reload.equals("ja")){
+            editor.putString("reload", "");
+            editor.apply();
+            recreate();
         }
 
     }

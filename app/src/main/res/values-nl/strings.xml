@@ -316,4 +316,12 @@
     <string name="instellingen_melding_3_titel">Account verwijderen</string>
     <string name="instellingen_melding_3_tekst">Weet je zeker dat je je account wilt verwijderen?</string>
 
+    <string name="instellingen_13">Verander Taal</string>
+
+    <string-array name="talen">
+        <item>Nederlands</item>
+        <item>Duits</item>
+        <item>Engels</item>
+    </string-array>
+
 </resources>

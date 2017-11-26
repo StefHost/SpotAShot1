@@ -314,4 +314,12 @@
     <string name="instellingen_melding_3_titel">Account löschen</string>
     <string name="instellingen_melding_3_tekst">Sind Sie sicher, dass Sie ihr Account löschen wollen?</string>
 
+    <string name="instellingen_13">Sprache ändern</string>
+
+    <string-array name="talen">
+        <item>Niederländisch</item>
+        <item>Deutsch</item>
+        <item>Englisch</item>
+    </string-array>
+
 </resources>

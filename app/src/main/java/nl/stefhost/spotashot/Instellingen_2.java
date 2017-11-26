@@ -13,8 +13,12 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -25,6 +29,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.StringTokenizer;
 
 public class Instellingen_2 extends AppCompatActivity {
@@ -36,10 +41,14 @@ public class Instellingen_2 extends AppCompatActivity {
     public ArrayList<String> arrayList;
     public String[] stringArray;
 
+    public Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instellingen_2);
+
+        context = this;
 
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
@@ -49,13 +58,13 @@ public class Instellingen_2 extends AppCompatActivity {
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
         TextView textView1 = (TextView) findViewById(R.id.textView1);
         TextView textView2 = (TextView) findViewById(R.id.textView2);
-        TextView textView3 = (TextView) findViewById(R.id.textView3);
+        //TextView textView3 = (TextView) findViewById(R.id.textView3);
         TextView textView4 = (TextView) findViewById(R.id.textView4);
 
         checkBox.setTypeface(typeface);
         textView1.setTypeface(typeface);
         textView2.setTypeface(typeface);
-        textView3.setTypeface(typeface);
+        //textView3.setTypeface(typeface);
         textView4.setTypeface(typeface);
 
         SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
@@ -71,6 +80,61 @@ public class Instellingen_2 extends AppCompatActivity {
             checkBox.setChecked(true);
         }
 
+        Spinner spinner = (Spinner) findViewById(R.id.talen);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.talen, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String lang = "";
+
+                switch (position) {
+                    case 0:
+                        lang = "nl";
+                        break;
+                    case 1:
+                        lang = "de";
+                        break;
+                    case 2:
+                        lang = "en";
+                        break;
+                }
+
+                if (userIsInteracting) {
+                    Locale myLocale = new Locale(lang);
+                    Locale.setDefault(myLocale);
+                    android.content.res.Configuration config = new android.content.res.Configuration();
+                    config.locale = myLocale;
+                    context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
+                    //finish();
+                    recreate();
+                }
+
+                SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("reload", "ja");
+                editor.apply();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
+
+    }
+
+    boolean userIsInteracting;
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        userIsInteracting = true;
     }
 
     public void spel_homescherm(View view) {
@@ -317,4 +381,5 @@ public class Instellingen_2 extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(0,0);
     }
+
 }

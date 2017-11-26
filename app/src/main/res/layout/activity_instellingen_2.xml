@@ -89,7 +89,7 @@
                 android:clickable="true"
                 android:onClick="uitloggen" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -106,7 +106,27 @@
                 android:textColor="#ffffff"
                 android:text="@string/instellingen_12"
                 android:clickable="true"
-                android:onClick="delete_account"/>
+                android:onClick="delete_account"/>-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:text="@string/instellingen_13" />
+
+            <Spinner
+                android:id="@+id/talen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp" >
+            </Spinner>
 
         </LinearLayout>
 

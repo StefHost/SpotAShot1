@@ -321,4 +321,12 @@
     <string name="instellingen_melding_3_titel">Delete account</string>
     <string name="instellingen_melding_3_tekst">Are you sure you want to delete your account?</string>
 
+    <string name="instellingen_13">Change Language</string>
+
+    <string-array name="talen">
+        <item>Dutch</item>
+        <item>German</item>
+        <item>English</item>
+    </string-array>
+
 </resources>
