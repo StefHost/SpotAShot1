@@ -1,0 +1,312 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <FrameLayout
+        android:id="@+id/camera_preview"
+        android:layout_width="300dp"
+        android:layout_height="540dp"
+        android:layout_below="@+id/spelbalk"
+        android:layout_marginTop="-100dp"
+        android:layout_centerHorizontal="true"
+        android:padding="2dp"
+        android:background="@drawable/zwart" />
+
+    <ImageView
+        android:id="@+id/border"
+        android:contentDescription="@+id/border"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/spelbalk"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/border_grijs" />
+
+    <ImageView
+        android:id="@+id/overlay_boven"
+        android:contentDescription="@+id/overlay_boven"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/spelbalk"
+        android:layout_marginTop="-100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/zwart" />
+
+    <ImageView
+        android:id="@+id/overlay_onder"
+        android:contentDescription="@+id/overlay_onder"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/camera_preview"
+        android:layout_marginTop="-120dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/zwart" />
+
+    <LinearLayout
+        android:id="@+id/flitser_selfie"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="90dp">
+
+        <ImageView
+            android:id="@+id/flitser"
+            android:contentDescription="@+id/flitser"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="110dp"
+            android:layout_marginEnd="110dp"
+            android:src="@drawable/flitser_auto"
+            android:onClick="flitser" />
+
+        <ImageView
+            android:id="@+id/selfie"
+            android:contentDescription="@+id/selfie"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginStart="110dp"
+            android:src="@drawable/selfie"
+            android:onClick="selfie" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/blurr_image"
+        android:contentDescription="@+id/blurr_image"
+        android:layout_width="302dp"
+        android:layout_height="302dp"
+        android:layout_below="@+id/spelbalk"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="#81000000"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/blurr_text"
+        android:layout_width="302dp"
+        android:layout_height="302dp"
+        android:layout_below="@+id/spelbalk"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:text="@string/foto_maken_1"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+    <include layout="@layout/spelbalk" />
+
+    <TextView
+        android:id="@+id/onderwerp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/camera_preview"
+        android:minLines="2"
+        android:layout_marginTop="-110dp"
+        android:text="onderwerp"/>
+
+    <LinearLayout
+        android:id="@+id/goed_fout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/onderwerp"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:id="@+id/fout_tekst"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/fout"
+                android:contentDescription="@+id/fout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/volgend_onderwerp"
+                android:onClick="annuleren" />
+
+            <TextView
+                android:id="@+id/cancel_tekst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="#ffffff"
+                android:layout_marginTop="5dp"
+                android:text="@string/foto_maken_2" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/marge"
+            android:contentDescription="@+id/marge"
+            android:layout_width="80dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:onClick="annuleren" />
+
+        <ImageView
+            android:id="@+id/camera"
+            android:contentDescription="@+id/camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/camera"
+            android:onClick="foto_maken" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/icon_tijden"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_below="@+id/goed_fout">
+
+        <LinearLayout
+            android:id="@+id/tijden"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tijd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="2dp"
+                android:text="00:00:00"/>
+
+            <LinearLayout
+                android:id="@+id/tijdbalk"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/tijd_aan"
+                    android:contentDescription="@+id/tijd_aan"
+                    android:layout_width="60dp"
+                    android:layout_height="7dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/grijs" />
+
+                <ImageView
+                    android:id="@+id/tijd_uit"
+                    android:contentDescription="@+id/tijd_uit"
+                    android:layout_width="60dp"
+                    android:layout_height="7dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/grijs_uit" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dpi"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:text="4dpi"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/achtergrond"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dialoog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/border"
+        android:background="#424242"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/dialoog_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="@string/foto_maken_melding_1"/>
+
+        <TextView
+            android:id="@+id/dialoog_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialoog_1"
+            android:layout_toLeftOf="@+id/dialoog_3"
+            android:layout_toStartOf="@+id/dialoog_3"
+            android:layout_marginRight="25dp"
+            android:layout_marginEnd="25dp"
+            android:padding="5dp"
+            android:textSize="15sp"
+            android:textColor="#80cbc4"
+            android:text="@string/nee"
+            android:clickable="true"
+            android:onClick="foto_nee"/>
+
+        <TextView
+            android:id="@+id/dialoog_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialoog_1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:padding="5dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="15sp"
+            android:textColor="#80cbc4"
+            android:text="@string/ja"
+            android:clickable="true"
+            android:onClick="foto_ja"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
