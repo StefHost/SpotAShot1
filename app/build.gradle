@@ -29,7 +29,7 @@ android {
         }
         vanilla {
             applicationId "nl.stefhost.spotashot"
-            versionName "1.0"
+            versionName "1.00-vanilla"
         }
     }
 }

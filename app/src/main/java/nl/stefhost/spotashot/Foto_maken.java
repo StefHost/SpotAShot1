@@ -230,7 +230,9 @@ public class Foto_maken extends AppCompatActivity {
 
         String reclame = getString(R.string.reclame);
 
-        if (reclame.equals("ja")) {
+        String gekocht = sharedPreferences.getString("gekocht", "");
+
+        if (!gekocht.equals("ja")) {
             requestNewInterstitial();
         }
 

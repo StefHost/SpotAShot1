@@ -271,6 +271,7 @@ public class Inloggen extends AppCompatActivity {
             StringTokenizer tokens = new StringTokenizer(resultaat, "|");
             String email = tokens.nextToken();
             String wachtwoord = tokens.nextToken();
+            String gekocht = tokens.nextToken();
 
             SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
             SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -278,6 +279,7 @@ public class Inloggen extends AppCompatActivity {
             editor.putString("email", email);
             editor.putString("wachtwoord", wachtwoord);
             editor.putString("uitloggen", "NEE");
+            editor.putString("gekocht", gekocht);
             editor.apply();
             Intent intent = new Intent(this, Home.class);
             startActivity(intent);

@@ -1,6 +1,7 @@
 package nl.stefhost.spotashot;
 
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -8,12 +9,14 @@ import android.content.IntentSender;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -23,6 +26,14 @@ import com.android.vending.billing.IInAppBillingService;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 
 public class Instellingen extends AppCompatActivity {
 
@@ -91,6 +102,7 @@ public class Instellingen extends AppCompatActivity {
         String notificaties_4 = sharedPreferences.getString("notificaties_4", "");
         String notificaties_5 = sharedPreferences.getString("notificaties_5", "");
         String geluid = sharedPreferences.getString("geluid", "");
+        String gekocht = sharedPreferences.getString("gekocht", "");
 
         naam = sharedPreferences.getString("naam", "");
         naam = naam.replace("%2520", " ");
@@ -113,6 +125,11 @@ public class Instellingen extends AppCompatActivity {
 
         if (geluid.equals("") || geluid.equals("AAN")) {
             CheckBox.setChecked(true);
+        }
+
+        if (gekocht.equals("ja")){
+            Button button = (Button)findViewById(R.id.button);
+            button.setVisibility(View.GONE);
         }
 
     }
@@ -206,7 +223,7 @@ public class Instellingen extends AppCompatActivity {
         Bundle buyIntentBundle = null;
 
         try {
-            buyIntentBundle = mService.getBuyIntent(3, getPackageName(), "reclame", "inapp", "bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzJ");
+            buyIntentBundle = mService.getBuyIntent(3, getPackageName(), "recl", "inapp", "bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzJ");
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -223,14 +240,17 @@ public class Instellingen extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1001) {
-            int responseCode = data.getIntExtra("RESPONSE_CODE", 0);
+            //int responseCode = data.getIntExtra("RESPONSE_CODE", 0);
             String purchaseData = data.getStringExtra("INAPP_PURCHASE_DATA");
-            String dataSignature = data.getStringExtra("INAPP_DATA_SIGNATURE");
+            //String dataSignature = data.getStringExtra("INAPP_DATA_SIGNATURE");
 
             if (resultCode == RESULT_OK) {
                 try {
                     JSONObject jo = new JSONObject(purchaseData);
                     String sku = jo.getString("productId");
+                    if (sku.equals("recl")){
+                        new kopen_opslaan().execute();
+                    }
                     Log.d("TestCollectie", "You have bought the " + sku + ". Excellent choice, adventurer!");
 
                 }
@@ -240,6 +260,68 @@ public class Instellingen extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    private class kopen_opslaan extends AsyncTask<Void, Void, String> {
+        @Override
+        protected String doInBackground(Void... params)  {
+
+            URL url = null;
+            URLConnection urlConnection = null;
+            InputStream inputStream = null;
+
+            try {
+                url = new URL(getString(R.string.website_paginas)+"/kopen_opslaan.php?naam="+naam+"&keuze=reclame");
+            } catch (MalformedURLException e) {
+                System.out.println("MalformedURLException");
+            }
+
+            if (url != null){
+                try{
+                    urlConnection = url.openConnection();
+                }catch (java.io.IOException e){
+                    System.out.println("java.io.IOException");
+                }
+            }
+
+            if (urlConnection != null){
+                try{
+                    inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                }catch (java.io.IOException e) {
+                    System.out.println("java.io.IOException");
+                }
+            }
+
+            if (inputStream != null){
+                resultaat = inputStream.toString();
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                try{
+                    resultaat = bufferedReader.readLine();
+                }catch (java.io.IOException e) {
+                    System.out.println("java.io.IOException");
+                }
+
+            }else{
+                resultaat = "ERROR";
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("gekocht", "ja");
+            editor.apply();
+
+            Button button = (Button)findViewById(R.id.button);
+            button.setVisibility(View.GONE);
+        }
+
     }
 
 }
