@@ -299,22 +299,28 @@ public class Spel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spel);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+        String gekocht = sharedPreferences.getString("gekocht", "");
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         String reclame = getString(R.string.reclame);
 
-        if (reclame.equals("ja")) {
+        if (!gekocht.equals("ja")) {
 
-            AdRequest adRequest1 = new AdRequest.Builder().build();
-            AdView mAdView = (AdView) findViewById(R.id.adView);
-            if (mAdView != null) {
-                mAdView.loadAd(adRequest1);
-            }
+            //if (reclame.equals("ja")) {
 
-            mInterstitialAd = new InterstitialAd(this);
-            mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
-            AdRequest adRequest2 = new AdRequest.Builder().build();
-            mInterstitialAd.loadAd(adRequest2);
+                AdRequest adRequest1 = new AdRequest.Builder().build();
+                AdView mAdView = (AdView) findViewById(R.id.adView);
+                if (mAdView != null) {
+                    mAdView.loadAd(adRequest1);
+                }
+
+                mInterstitialAd = new InterstitialAd(this);
+                mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+                AdRequest adRequest2 = new AdRequest.Builder().build();
+                mInterstitialAd.loadAd(adRequest2);
+            //}
         }
 
         context = Spel.this;
@@ -330,7 +336,7 @@ public class Spel extends AppCompatActivity {
         if (status == null){
             status = "OK";
         }
-        SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+
         naam_speler = sharedPreferences.getString("naam", "");
         naam_speler = naam_speler.replace("%2520", " ");
 
