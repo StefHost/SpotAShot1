@@ -145,14 +145,27 @@
                 android:clickable="true"
                 android:onClick="instellingen_2"/>
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="40dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:text="Speel Spot a Shot zonder reclame\nen ontgrendel het thema 'buiten'" />
+
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
-                android:text="Spot a Shot kopen"
+                android:layout_marginTop="0dp"
+                android:text="Spot a Shot kopen (€ 0,99)"
                 android:onClick="kopen"/>
 
         </LinearLayout>

@@ -223,7 +223,7 @@ public class Instellingen extends AppCompatActivity {
         Bundle buyIntentBundle = null;
 
         try {
-            buyIntentBundle = mService.getBuyIntent(3, getPackageName(), "reclame", "inapp", "bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzJ");
+            buyIntentBundle = mService.getBuyIntent(3, getPackageName(), "reclame_nieuw_1", "inapp", "bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzJ");
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -248,7 +248,7 @@ public class Instellingen extends AppCompatActivity {
                 try {
                     JSONObject jo = new JSONObject(purchaseData);
                     String sku = jo.getString("productId");
-                    if (sku.equals("reclame")){
+                    if (sku.equals("reclame_nieuw_1")){
                         new kopen_opslaan().execute();
                     }
                     Log.d("TestCollectie", "You have bought the " + sku + ". Excellent choice, adventurer!");
@@ -313,13 +313,26 @@ public class Instellingen extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
+            kopen_opslaan_klaar();
+        }
+
+    }
+
+    public void kopen_opslaan_klaar(){
+
+        if (resultaat.equals("OK")) {
+
             SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("gekocht", "ja");
             editor.apply();
 
-            Button button = (Button)findViewById(R.id.button);
+            TextView textView = (TextView) findViewById(R.id.textView3);
+            textView.setVisibility(View.GONE);
+            Button button = (Button) findViewById(R.id.button);
             button.setVisibility(View.GONE);
+
+            _functions.melding("Bedankt!", "Bedankt voor het kopen van\nSpot a Shot.\n\nVanaf nu geniet je van het spel zonder reclame en daarnaast heb je het thema 'Buiten' vrijgespeeld.", this);
         }
 
     }
