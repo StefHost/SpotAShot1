@@ -26,6 +26,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -65,6 +69,8 @@ public class Nieuw_spel extends AppCompatActivity {
 
     public String toestemming_profielfoto;
     private static final int WRITE_EXTERNAL_STORAGE = 0;
+
+    InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -173,6 +179,27 @@ public class Nieuw_spel extends AppCompatActivity {
         themas = getIntent().getExtras().getString("themas");
         themas_updaten();
 
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                requestNewInterstitial();
+            }
+        });
+
+        String gekocht = sharedPreferences.getString("gekocht", "");
+
+        if (!gekocht.equals("ja")) {
+            requestNewInterstitial();
+        }
+
+    }
+
+    private void requestNewInterstitial() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mInterstitialAd.loadAd(adRequest);
     }
 
     public void themas_updaten(){
@@ -683,6 +710,8 @@ public class Nieuw_spel extends AppCompatActivity {
         toast.show();
     }
 
+    int aantal_random = 0;
+
     public void random_speler(View view){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(Nieuw_spel.this);
@@ -692,13 +721,23 @@ public class Nieuw_spel extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int id) {
                 tegenstander = "RANDOM";
 
+                aantal_random++;
+
                 ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
                 if (networkInfo == null){
                     Toast.makeText(context, getString(R.string.foutmelding_internet), Toast.LENGTH_SHORT).show();
                 }else{
-                    ProgressDialog = android.app.ProgressDialog.show(context, getString(R.string.nieuw_spel_melding_4), getString(R.string.een_ogenblik_geduld), true, false);
-                    new tegenstander_zoeken().execute();
+                    if (aantal_random == 8){
+                        Log.d("SAS", "FILMPJE");
+                        if (mInterstitialAd.isLoaded()) {
+                            mInterstitialAd.show();
+                        }
+                        aantal_random = 0;
+                    }else{
+                        ProgressDialog = android.app.ProgressDialog.show(context, getString(R.string.nieuw_spel_melding_4), getString(R.string.een_ogenblik_geduld), true, false);
+                        new tegenstander_zoeken().execute();
+                    }
                 }
 
             }
