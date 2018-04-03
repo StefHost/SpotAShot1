@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    buildToolsVersion '26.0.2'
     dexOptions {
         maxProcessCount 2
         javaMaxHeapSize "2g"
@@ -18,16 +18,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "gratis", "betaald", "vanilla"
+
     productFlavors {
         gratis {
+            dimension "gratis"
             applicationId "nl.stefhost.spotashot.gratis"
             versionName "2.06-gratis"
         }
         betaald {
+            dimension "betaald"
             applicationId "nl.stefhost.spotashot.betaald"
             versionName "2.06-betaald"
         }
         vanilla {
+            dimension "vanilla"
             applicationId "nl.stefhost.spotashot"
             versionName "1.00-vanilla"
         }

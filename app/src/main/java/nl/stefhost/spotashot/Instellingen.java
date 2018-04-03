@@ -334,6 +334,7 @@ public class Instellingen extends AppCompatActivity {
 
             _functions.melding("Bedankt!", "Bedankt voor het kopen van\nSpot a Shot.\n\nVanaf nu geniet je van het spel zonder reclame en daarnaast heb je het thema 'Buiten' vrijgespeeld.", this);
         }
+        //test
 
     }
 

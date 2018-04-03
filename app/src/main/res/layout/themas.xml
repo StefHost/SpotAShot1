@@ -151,7 +151,8 @@
                 android:textSize="12sp"
                 android:clickable="true"
                 android:onClick="kopen_geld"
-                android:tag="2" />
+                android:tag="2"
+                android:visibility="invisible"/>
 
         </LinearLayout>
 
@@ -209,7 +210,8 @@
                 android:text="€ 0,99"
                 android:clickable="true"
                 android:onClick="kopen_geld"
-                android:tag="3" />
+                android:tag="3"
+                android:visibility="invisible"/>
 
         </LinearLayout>
 
@@ -267,7 +269,8 @@
                 android:text="€ 0,99"
                 android:clickable="true"
                 android:onClick="kopen_geld"
-                android:tag="4" />
+                android:tag="4"
+                android:visibility="invisible"/>
 
         </LinearLayout>
 
@@ -325,7 +328,8 @@
                 android:text="€ 0,99"
                 android:clickable="true"
                 android:onClick="kopen_geld"
-                android:tag="5" />
+                android:tag="5"
+                android:visibility="invisible"/>
 
         </LinearLayout>
 

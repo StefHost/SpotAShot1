@@ -519,6 +519,8 @@ public class Spel extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... params)  {
 
+            Log.d("SAS", "spel_laden");
+
             String taal = Locale.getDefault().getLanguage();
             String naam_laden = naam_speler.replace(" ", "%20");
 
@@ -2659,7 +2661,7 @@ public class Spel extends AppCompatActivity {
     private Runnable herlaad_spel = new Runnable() {
         @Override
         public void run() {
-            if (!aantal.equals("1")){
+            if (!aantal.equals("1") && animatie_bezig.equals("nee")){
                 Animation animation = AnimationUtils.loadAnimation(context, R.anim.animatie_rotatie);
                 ImageView imageView = (ImageView) findViewById(R.id.laden);
                 imageView.startAnimation(animation);

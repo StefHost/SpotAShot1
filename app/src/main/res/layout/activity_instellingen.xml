@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textview_boven"
-        android:layout_marginTop="10dp">
+        android:layout_marginBottom="0dp">
 
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -156,7 +156,7 @@
                 android:paddingBottom="10dp"
                 android:paddingLeft="10dp"
                 android:textSize="16sp"
-                android:text="Speel Spot a Shot zonder reclame\nen ontgrendel het thema 'buiten'" />
+                android:text="Speel Spot a Shot zonder reclame en ontgrendel het thema 'buiten'" />
 
             <Button
                 android:id="@+id/button"
