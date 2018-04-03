@@ -105,7 +105,8 @@ public class Foto_maken extends AppCompatActivity {
     private static final int CAMERA = 0;
     public String toestemming_camera;
 
-    InterstitialAd mInterstitialAd;
+    InterstitialAd mInterstitialAd1;
+    InterstitialAd mInterstitialAd2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,11 +211,11 @@ public class Foto_maken extends AppCompatActivity {
         editor.putString("huidige_spel", "0");
         editor.apply();
 
-        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd1 = new InterstitialAd(this);
         //mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+        mInterstitialAd1.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
 
-        mInterstitialAd.setAdListener(new AdListener() {
+        mInterstitialAd1.setAdListener(new AdListener() {
             @Override
             public void onAdClosed() {
                 ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -225,6 +226,16 @@ public class Foto_maken extends AppCompatActivity {
                     ProgressDialog = android.app.ProgressDialog.show(context, getString(R.string.foto_maken_melding_4), getString(R.string.een_ogenblik_geduld), true, false);
                     new foto_cancelen().execute();
                 }
+            }
+        });
+
+        mInterstitialAd2 = new InterstitialAd(this);
+        mInterstitialAd2.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+
+        mInterstitialAd2.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                finish();
             }
         });
 
@@ -240,8 +251,10 @@ public class Foto_maken extends AppCompatActivity {
     }
 
     private void requestNewInterstitial() {
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mInterstitialAd.loadAd(adRequest);
+        AdRequest adRequest1 = new AdRequest.Builder().build();
+        AdRequest adRequest2 = new AdRequest.Builder().build();
+        mInterstitialAd1.loadAd(adRequest1);
+        mInterstitialAd2.loadAd(adRequest2);
     }
 
 
@@ -926,8 +939,13 @@ public class Foto_maken extends AppCompatActivity {
                     Log.d("uploadFile", resultaat);
 
                     SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+
+                    int aantal_fotos = sharedPreferences.getInt("aantal_fotos", 0);
+                    aantal_fotos++;
+
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("upload", resultaat);
+                    editor.putInt("aantal_fotos", aantal_fotos);
                     editor.apply();
 
                     sourceFile.delete();
@@ -938,6 +956,25 @@ public class Foto_maken extends AppCompatActivity {
                 dos.close();
 
                 ProgressDialog.dismiss();
+
+                SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+                int aantal_fotos = sharedPreferences.getInt("aantal_fotos", 0);
+                if (aantal_fotos == 3){
+                    Log.d("SAS", "FILMPJE");
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("aantal_fotos", 0);
+                    editor.apply();
+
+                    this.runOnUiThread(new Runnable() {
+                        public void run() {
+                            if (mInterstitialAd2.isLoaded()) {
+                                mInterstitialAd2.show();
+                            }else{
+                                finish();
+                            }
+                        }
+                    });
+                }
 
                 finish();
 
@@ -984,8 +1021,8 @@ public class Foto_maken extends AppCompatActivity {
             String reclame = getString(R.string.reclame);
 
             if (reclame.equals("ja")) {
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
+                if (mInterstitialAd1.isLoaded()) {
+                    mInterstitialAd1.show();
                 }else{
                     ProgressDialog = android.app.ProgressDialog.show(context, getString(R.string.foto_maken_melding_4), getString(R.string.een_ogenblik_geduld), true, false);
                     new foto_cancelen().execute();
