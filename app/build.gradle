@@ -10,7 +10,7 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 2
+        versionCode 6
     }
     buildTypes {
         release {
@@ -19,7 +19,7 @@ android {
         }
     }
 
-    flavorDimensions "gratis", "betaald", "vanilla"
+    flavorDimensions "gratis"
 
     productFlavors {
         gratis {
@@ -28,12 +28,12 @@ android {
             versionName "2.06-gratis"
         }
         betaald {
-            dimension "betaald"
+            dimension "gratis"
             applicationId "nl.stefhost.spotashot.betaald"
             versionName "2.06-betaald"
         }
         vanilla {
-            dimension "vanilla"
+            dimension "gratis"
             applicationId "nl.stefhost.spotashot"
             versionName "1.00-vanilla"
         }

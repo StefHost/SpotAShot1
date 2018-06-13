@@ -223,7 +223,7 @@ public class Instellingen extends AppCompatActivity {
         Bundle buyIntentBundle = null;
 
         try {
-            buyIntentBundle = mService.getBuyIntent(3, getPackageName(), "reclame_nieuw_1", "inapp", "bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzJ");
+            buyIntentBundle = mService.getBuyIntent(3, getPackageName(), "reclame_april", "inapp", "bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzJ");
         } catch (RemoteException e) {
             e.printStackTrace();
         }
