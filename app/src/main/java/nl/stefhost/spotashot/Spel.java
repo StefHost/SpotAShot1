@@ -304,23 +304,18 @@ public class Spel extends AppCompatActivity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        String reclame = getString(R.string.reclame);
-
         if (!gekocht.equals("ja")) {
 
-            //if (reclame.equals("ja")) {
+            AdRequest adRequest1 = new AdRequest.Builder().build();
+            AdView mAdView = (AdView) findViewById(R.id.adView);
+            if (mAdView != null) {
+                mAdView.loadAd(adRequest1);
+            }
 
-                AdRequest adRequest1 = new AdRequest.Builder().build();
-                AdView mAdView = (AdView) findViewById(R.id.adView);
-                if (mAdView != null) {
-                    mAdView.loadAd(adRequest1);
-                }
-
-                mInterstitialAd = new InterstitialAd(this);
-                mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
-                AdRequest adRequest2 = new AdRequest.Builder().build();
-                mInterstitialAd.loadAd(adRequest2);
-            //}
+            mInterstitialAd = new InterstitialAd(this);
+            mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+            AdRequest adRequest2 = new AdRequest.Builder().build();
+            mInterstitialAd.loadAd(adRequest2);
         }
 
         context = Spel.this;
@@ -1748,9 +1743,10 @@ public class Spel extends AppCompatActivity {
                     handler1 = new Handler();
                     handler1.postDelayed(spel_herladen, 1000);
 
-                    String reclame = getString(R.string.reclame);
+                    SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+                    String gekocht = sharedPreferences.getString("gekocht", "");
 
-                    if (reclame.equals("ja")) {
+                    if (!gekocht.equals("ja")) {
                         if (mInterstitialAd.isLoaded()) {
                             Log.d("SAS", "ja");
                             mInterstitialAd.show();
@@ -1790,9 +1786,10 @@ public class Spel extends AppCompatActivity {
                     handler1 = new Handler();
                     handler1.postDelayed(spel_herladen, 1000);
 
-                    String reclame = getString(R.string.reclame);
+                    SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+                    String gekocht = sharedPreferences.getString("gekocht", "");
 
-                    if (reclame.equals("ja")) {
+                    if (!gekocht.equals("ja")) {
                         if (mInterstitialAd.isLoaded()) {
                             Log.d("SAS", "ja");
                             mInterstitialAd.show();

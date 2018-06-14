@@ -239,8 +239,6 @@ public class Foto_maken extends AppCompatActivity {
             }
         });
 
-        String reclame = getString(R.string.reclame);
-
         String gekocht = sharedPreferences.getString("gekocht", "");
 
         if (!gekocht.equals("ja")) {
@@ -965,15 +963,19 @@ public class Foto_maken extends AppCompatActivity {
                     editor.putInt("aantal_fotos", 0);
                     editor.apply();
 
-                    this.runOnUiThread(new Runnable() {
-                        public void run() {
-                            if (mInterstitialAd2.isLoaded()) {
-                                mInterstitialAd2.show();
-                            }else{
-                                finish();
+                    String gekocht = sharedPreferences.getString("gekocht", "");
+
+                    if (!gekocht.equals("ja")) {
+                        this.runOnUiThread(new Runnable() {
+                            public void run() {
+                                if (mInterstitialAd2.isLoaded()) {
+                                    mInterstitialAd2.show();
+                                } else {
+                                    finish();
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
 
                 finish();
@@ -1018,9 +1020,10 @@ public class Foto_maken extends AppCompatActivity {
         if (networkInfo == null){
             Toast.makeText(this, getString(R.string.foutmelding_internet), Toast.LENGTH_SHORT).show();
         }else{
-            String reclame = getString(R.string.reclame);
+            SharedPreferences sharedPreferences = getSharedPreferences("opties", 0);
+            String gekocht = sharedPreferences.getString("gekocht", "");
 
-            if (reclame.equals("ja")) {
+            if (!gekocht.equals("ja")) {
                 if (mInterstitialAd1.isLoaded()) {
                     mInterstitialAd1.show();
                 }else{
