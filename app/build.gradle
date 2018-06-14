@@ -35,7 +35,7 @@ android {
         vanilla {
             dimension "gratis"
             applicationId "nl.stefhost.spotashot"
-            versionName "1.00-vanilla"
+            versionName "1.00"
         }
     }
 }
