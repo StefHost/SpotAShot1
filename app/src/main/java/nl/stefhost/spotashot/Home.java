@@ -651,11 +651,13 @@ public class Home extends AppCompatActivity {
                 throw new RuntimeException("Could not get package name: " + e);
             }
 
-            StringTokenizer stringTokenizer = new StringTokenizer(versie_app, "-");
-            String nummer = stringTokenizer.nextToken();
-            String betaald = stringTokenizer.nextToken();
+            //StringTokenizer stringTokenizer = new StringTokenizer(versie_app, "-");
+            //String nummer = stringTokenizer.nextToken();
+            //String betaald = stringTokenizer.nextToken();
 
-            if (!versie.equals(nummer)) {
+            Log.d("SAS", versie+""+versie_app);
+
+            if (!versie.equals(versie_app)) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Home.this);
                 builder.setTitle("Update beschikbaar")
                         .setMessage("Er is een update beschikbaar")
@@ -671,8 +673,7 @@ public class Home extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                // Tijdelijk uitschakelen tijdens testen
-                //builder.show();
+                builder.show();
             }
         }
 
